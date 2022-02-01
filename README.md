@@ -1,9 +1,10 @@
-# Calorie Tracker
+# My Personal Project
 
-## FINISHED
- - Day class for tracking calories per day
- - Profile class for keeping track of days
-## IN PROGRESS
- - multiple profiles
-## TO-DO
- - add recommendations based on age, gender, etc.
+## A subtitle
+
+A *bulleted* list:
+- item 1
+- item 2
+- item 3
+
+An example of text with **bold** and *italic* fonts.  
