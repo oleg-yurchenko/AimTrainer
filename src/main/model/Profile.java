@@ -1,15 +1,12 @@
 package model;
 
 public class Profile {
-    // Getters for hits, clicks and sumOfDistances are not being created because
-    // we will never need this values (instead we have getters taht return precision and accuracy)
-
     private String name; // username
     private int hits; // number of times target was hit
-    private int clicks // number of times user clicked while in game
+    private int clicks; // number of times user clicked while in game
     private float sumOfDistances; // sum of distances to target (divided by hits to get precision)
 
-    // Effects: creates a profile with 0 accuracy and precision and a given name
+    // Effects: creates a profile with given string name and 0 hits, clicks and sumOfDistances.
     // Modifies: this
     public Profile(String name) {
         // stub
@@ -17,29 +14,41 @@ public class Profile {
 
     // Effects: adds 1 to this.hits and adds the distance to sumOfDistances
     // Modifies: this
-    // Requires: distance >= 0 (must be absolute value)
+    // Requires: distance    >= 0 (must be absolute value)
+    //           this.hits+1 <= this.clicks (function calling hit must also call click)
     public void hit(float distance) {
         // stub
     }
 
     // Effects: adds 1 to this.clicks
-    // Modigies: this
+    // Modifies: this
     public void click() {
         // stub
     }
 
     // Effects: produces the accuracy (hits/clicks)
     public float getAccuracy() {
-        // stub
+        return 0.0f; // stub
     }
 
     // Effects: produces the precision (sumOfDistances/hits) ; average distance to center per hit
     public float getPrecision() {
-        // stub
+        return 0.0f; // stub
     }
 
-    // Effects: returns the username of the profile
     public String getName() {
-        // stub
+        return ""; // stub
+    }
+
+    public int getHits() {
+        return 0; // stub
+    }
+
+    public int getClicks() {
+        return 0; // stub
+    }
+
+    public float getSumOfDistances() {
+        return 0; // stub
     }
 }

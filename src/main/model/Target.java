@@ -14,50 +14,56 @@ public class Target {
 
     // Effects: moves the x value by the given amount
     // Modifies: this
-    public moveX(float amount) {
+    // Requires: !(amount == 0)
+    public void moveX(float amount) {
         // stub
     }
 
     // Effects: moves the y value by the given amount
     // Modifies: this
-    public moveY(float amount) {
+    // Requires: !(amount == 0)
+    public void moveY(float amount) {
         // stub
     }
 
     // Effects: changes the colour of the target to the given colour (hex code)
     // Modifies: this
+    // Requires: colour is in hex (Integer.toHexString() was used, or custom hex value)
     public void setColour(String colour) {
         // stub
     }
 
     // Effects: modifies the radius of the circle by the given amount
     // Modifies: this
+    // Requires: !(amount == 0)
+    //           this.radius - amount >= 0
     public void changeRadius(float amount) {
         // stub
     }
 
     // Effects: gets the distance from the center of the target to the given point
     public float getDistanceToPoint(float x, float y) {
-        // stub
+        return 0.0f; // stub
     }
 
-    // Effects: returns the x position
+    // Effects: returns true if the given coordinates are inside the target
+    public boolean isHit(float x, float y) {
+        return false; // stub
+    }
+
     public float getX() {
-        // stub
+        return 0.0f; // stub
     }
 
-    //Effects: returns the y position
     public float getY() {
-        // stub
+        return 0.0f; // stub
     }
 
-    //Effects: returns the colour
     public String getColour() {
-        // stub
+        return ""; // stub
     }
 
-    // Effects: return the radius of the target
     public float getRadius() {
-        // stub
+        return 0.0f; // stub
     }
 }

@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="implemented very primitive UI interface.">
-      <change afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/model/ProfileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/model/TargetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/ProfileTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_f7u9j.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/model/ProfileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/model/TargetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/model/ProfileTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/model/TargetTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,20 +40,33 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="24UQzdQpgohDyFnWd5qDypIZ2aU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in project_f7u9j">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.Main" />
       <module name="Project-Starter" />
@@ -60,8 +80,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in project_f7u9j" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_f7u9j" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="project_f7u9j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="PACKAGE_NAME" value="test.model" />
+      <option name="MAIN_CLASS_NAME" value="test.model.ProfileTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TargetTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="project_f7u9j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="PACKAGE_NAME" value="test.model" />
+      <option name="MAIN_CLASS_NAME" value="test.model.TargetTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="project_f7u9j" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ProfileTest" />
+      <item itemvalue="JUnit.TargetTest" />
+      <item itemvalue="JUnit.All in project_f7u9j" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -112,9 +198,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added the Day class which stores gained and burned calories for each day." />
     <MESSAGE value="Added the Profile class which stores the days with the calories and the name of the user. Modified README.md." />
     <MESSAGE value="implemented very primitive UI interface." />
     <option name="LAST_COMMIT_MESSAGE" value="implemented very primitive UI interface." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1643854775064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
