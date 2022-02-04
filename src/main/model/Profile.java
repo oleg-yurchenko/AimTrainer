@@ -9,46 +9,56 @@ public class Profile {
     // Effects: creates a profile with given string name and 0 hits, clicks and sumOfDistances.
     // Modifies: this
     public Profile(String name) {
-        // stub
+        this.name = name;
+        this.hits = 0;
+        this.clicks = 0;
+        this.sumOfDistances = 0.0f;
     }
 
-    // Effects: adds 1 to this.hits and adds the distance to sumOfDistances
+    // Effects: adds 1 to this.hits, this.clicks, and adds the distance to sumOfDistances
     // Modifies: this
     // Requires: distance    >= 0 (must be absolute value)
-    //           this.hits+1 <= this.clicks (function calling hit must also call click)
     public void hit(float distance) {
-        // stub
+        hits++;
+        clicks++;
+        sumOfDistances += distance;
     }
 
     // Effects: adds 1 to this.clicks
     // Modifies: this
     public void click() {
-        // stub
+        clicks++;
     }
 
     // Effects: produces the accuracy (hits/clicks)
     public float getAccuracy() {
-        return 0.0f; // stub
+        if (clicks == 0) {
+            return 1.0f;
+        }
+        return (float)hits / (float)clicks;
     }
 
     // Effects: produces the precision (sumOfDistances/hits) ; average distance to center per hit
     public float getPrecision() {
-        return 0.0f; // stub
+        if (hits == 0) {
+            return 0.0f;
+        }
+        return sumOfDistances / (float)hits;
     }
 
     public String getName() {
-        return ""; // stub
+        return name; // stub
     }
 
     public int getHits() {
-        return 0; // stub
+        return hits;
     }
 
     public int getClicks() {
-        return 0; // stub
+        return clicks;
     }
 
     public float getSumOfDistances() {
-        return 0; // stub
+        return sumOfDistances;
     }
 }

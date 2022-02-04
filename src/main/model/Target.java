@@ -1,36 +1,39 @@
 package model;
 
 public class Target {
-    private float x;
-    private float y;
+    private float posX;
+    private float posY;
     private String colour;
     private float radius;
 
     // Effects: makes a new target with given x and y positions, given colour (hex code) and radius.
     // Modifies: this
     public Target(float x, float y, String colour, float radius) {
-        // stub
+        this.posX = x;
+        this.posY = y;
+        this.colour = colour;
+        this.radius = radius;
     }
 
     // Effects: moves the x value by the given amount
     // Modifies: this
     // Requires: !(amount == 0)
     public void moveX(float amount) {
-        // stub
+        this.posX += amount;
     }
 
     // Effects: moves the y value by the given amount
     // Modifies: this
     // Requires: !(amount == 0)
     public void moveY(float amount) {
-        // stub
+        this.posY += amount;
     }
 
     // Effects: changes the colour of the target to the given colour (hex code)
     // Modifies: this
     // Requires: colour is in hex (Integer.toHexString() was used, or custom hex value)
     public void setColour(String colour) {
-        // stub
+        this.colour = colour;
     }
 
     // Effects: modifies the radius of the circle by the given amount
@@ -38,7 +41,7 @@ public class Target {
     // Requires: !(amount == 0)
     //           this.radius - amount >= 0
     public void changeRadius(float amount) {
-        // stub
+        this.radius += amount;
     }
 
     // Effects: gets the distance from the center of the target to the given point
@@ -51,19 +54,19 @@ public class Target {
         return false; // stub
     }
 
-    public float getX() {
-        return 0.0f; // stub
+    public float getPosX() {
+        return posX;
     }
 
-    public float getY() {
-        return 0.0f; // stub
+    public float getPosY() {
+        return posY;
     }
 
     public String getColour() {
-        return ""; // stub
+        return colour;
     }
 
     public float getRadius() {
-        return 0.0f; // stub
+        return radius;
     }
 }

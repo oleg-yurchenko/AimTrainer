@@ -19,27 +19,27 @@ public class TargetTest {
     @Test
     public void moveXTest() {
         target1.moveX(20.0f);
-        assertEquals(20.0f, target1.getX());
+        assertEquals(20.0f, target1.getPosX());
         target1.moveX(-5.0f);
-        assertEquals(15.0f, target1.getX());
+        assertEquals(15.0f, target1.getPosX());
 
         target2.moveX(-50.0f);
-        assertEquals(150.0f, target2.getX());
+        assertEquals(150.0f, target2.getPosX());
         target2.moveX(25.0f);
-        assertEquals(175.0f, target2.getX());
+        assertEquals(175.0f, target2.getPosX());
     }
 
     @Test
     public void moveYTest() {
         target1.moveY(10.0f);
-        assertEquals(10.0f, target1.getY());
+        assertEquals(10.0f, target1.getPosY());
         target1.moveY(-0.1f);
-        assertEquals(9.9f, target1.getY());
+        assertEquals(9.9f, target1.getPosY());
 
         target2.moveY(-15.5f);
-        assertEquals(14.5f, target2.getY());
+        assertEquals(14.5f, target2.getPosY());
         target2.moveY(20.2f);
-        assertEquals(34.7f, target2.getY());
+        assertEquals(34.7f, target2.getPosY());
     }
 
     @Test

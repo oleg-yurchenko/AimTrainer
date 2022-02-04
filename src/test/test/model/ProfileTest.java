@@ -38,27 +38,23 @@ public class ProfileTest {
     @Test
     public void getAccuracyTest() {
         assertEquals(1.0f, profile.getAccuracy());
-        profile.click();
         profile.hit(20.0f);
         assertEquals(1.0f, profile.getAccuracy());
         profile.click();
         assertEquals(0.5f, profile.getAccuracy());
-        profile.click();
         profile.hit(0.0f);
-        assertEquals(2.0f/3.0f, profile.getAccuracy());
+        assertEquals(2.0f / 3.0f, profile.getAccuracy());
     }
 
     @Test
     public void getPrecisionTest() {
         assertEquals(0.0f, profile.getPrecision());
-        profile.click();
         profile.hit(20.0f);
         assertEquals(20.0f, profile.getPrecision());
         profile.click();
         assertEquals(20.0f, profile.getPrecision());
-        profile.click();
         profile.hit(15.0f);
-        assertEquals(35.0f/2.0f, profile.getPrecision());
+        assertEquals(35.0f / 2.0f, profile.getPrecision());
     }
 
     @Test
