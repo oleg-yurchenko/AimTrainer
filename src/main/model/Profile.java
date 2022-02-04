@@ -17,7 +17,7 @@ public class Profile {
 
     // Effects: adds 1 to this.hits, this.clicks, and adds the distance to sumOfDistances
     // Modifies: this
-    // Requires: distance    >= 0 (must be absolute value)
+    // Requires: distance >= 0 (must be absolute value)
     public void hit(float distance) {
         hits++;
         clicks++;
@@ -35,7 +35,7 @@ public class Profile {
         if (clicks == 0) {
             return 1.0f;
         }
-        return (float)hits / (float)clicks;
+        return (float) hits / (float) clicks;
     }
 
     // Effects: produces the precision (sumOfDistances/hits) ; average distance to center per hit
@@ -43,11 +43,11 @@ public class Profile {
         if (hits == 0) {
             return 0.0f;
         }
-        return sumOfDistances / (float)hits;
+        return sumOfDistances / (float) hits;
     }
 
     public String getName() {
-        return name; // stub
+        return name;
     }
 
     public int getHits() {

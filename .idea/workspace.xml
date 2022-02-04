@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile.">
-      <change afterPath="$PROJECT_DIR$/checkstyle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lanterna-3.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/ProfileTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/ProfileTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_f7u9j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project_f7u9j.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/test/model/ProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/ProfileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/test/model/TargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/TargetTest.java" afterDir="false" />
     </list>
@@ -79,7 +71,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in project_f7u9j">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -162,8 +154,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in project_f7u9j" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643854846374</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile.">
+      <created>1643954980897</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1643954980897</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +238,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1643954087550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1643960165223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

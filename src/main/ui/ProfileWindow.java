@@ -1,11 +1,7 @@
 package ui;
 
-import com.googlecode.lanterna.gui2.GridLayout;
-import com.googlecode.lanterna.gui2.Label;
-import com.googlecode.lanterna.gui2.Panel;
+import com.googlecode.lanterna.gui2.*;
 import model.Profile;
-
-import com.googlecode.lanterna.gui2.BasicWindow;
 
 import java.util.HashSet;
 
@@ -24,6 +20,19 @@ public class ProfileWindow extends BasicWindow {
         Panel panel = new Panel();
         panel.setLayoutManager(new GridLayout(2));
 
+        loadStats(panel, user);
+
+        panel.addComponent(new Button("Back", new Runnable() {
+            @Override
+            public void run() {
+                ProfileWindow.this.close();
+            }
+        }));
+
+        setComponent(panel);
+    }
+
+    public static void loadStats(Panel panel, Profile user) {
         panel.addComponent(new Label("Precision:"));
         panel.addComponent(new Label(Float.toString(user.getPrecision())));
 
@@ -35,7 +44,5 @@ public class ProfileWindow extends BasicWindow {
 
         panel.addComponent(new Label("Clicks"));
         panel.addComponent(new Label(Integer.toString(user.getClicks())));
-
-        setComponent(panel);
     }
 }

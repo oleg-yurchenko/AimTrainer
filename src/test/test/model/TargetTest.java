@@ -89,9 +89,9 @@ public class TargetTest {
         assertFalse(target1.isHit(5.1f, 0.0f));
 
         assertTrue(target2.isHit(100.0f, 30.0f));
-        assertTrue(target2.isHit(100.0f,31.9f));
-        assertTrue(target2.isHit(100.0f,32.0f));
-        assertFalse(target2.isHit(100.0f,32.1f));
+        assertTrue(target2.isHit(100.0f, 31.9f));
+        assertTrue(target2.isHit(100.0f, 32.0f));
+        assertFalse(target2.isHit(100.0f, 32.1f));
 
         assertTrue(target1.isHit(1.0f, 1.0f));
         assertFalse(target1.isHit(10.0f, 10.0f));

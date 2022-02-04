@@ -2,11 +2,10 @@ package ui;
 
 import com.googlecode.lanterna.gui2.*;
 import com.googlecode.lanterna.gui2.dialogs.TextInputDialog;
-import javafx.scene.layout.Pane;
 import model.Profile;
 
-import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class ProfileSelectWindow extends BasicWindow {
     private Main.Mode mode;
@@ -32,11 +31,17 @@ public class ProfileSelectWindow extends BasicWindow {
     }
 
     private void writeProfiles() {
-        for (final Profile profile: profiles) {
+        for (final Profile profile : profiles) {
             panel.addComponent(new Button(profile.getName(), new Runnable() {
                 @Override
                 public void run() {
-                    nextWindow = (mode == Main.Mode.GAME) ? new GameWindow(profile) : new ProfileWindow(profile);
+                    if (mode == Main.Mode.GAME) {
+                        // need to shorten this lol
+                        int gridSize = Integer.parseInt(TextInputDialog.showDialog(getTextGUI(), "Size:", "Enter the size of the grid", "10"));
+                        nextWindow = new GameWindow(profile, gridSize);
+                    } else {
+                        nextWindow = new ProfileWindow(profile);
+                    }
                     getTextGUI().addWindow(nextWindow);
                     nextWindow.waitUntilClosed();
                 }

@@ -3,9 +3,7 @@ package ui;
 import com.googlecode.lanterna.gui2.*;
 import model.Profile;
 
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 
 public class MenuWindow extends BasicWindow {
