@@ -1,7 +1,8 @@
 package model;
 
+// Represents a target that the user will try to click during the game. It has an x and y position, a colour and radius.
 public class Target {
-    // not sure how the GUI will process coordinates, float or int
+    // not sure how the GUI will process coordinates, float or int, but keep it as float for now
     private float posX;
     private float posY;
     private String colour;

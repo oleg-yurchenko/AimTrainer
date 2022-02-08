@@ -1,6 +1,6 @@
 package model;
 
-//
+// Represents a profile which has a name and keeps track of the user's statistics
 public class Profile {
     private String name; // username
     private int hits; // number of times target was hit

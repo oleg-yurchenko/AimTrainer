@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Implemented all methods in Target">
-      <change afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Refactored Main to call AimTrainer, as was specified in the project description.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644294776256</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactored Main to call AimTrainer, as was specified in the project description.">
+      <created>1644295838522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1644295838522</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,7 +252,8 @@
     <MESSAGE value="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile." />
     <MESSAGE value="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be." />
     <MESSAGE value="Implemented all methods in Target" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented all methods in Target" />
+    <MESSAGE value="Refactored Main to call AimTrainer, as was specified in the project description." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored Main to call AimTrainer, as was specified in the project description." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
