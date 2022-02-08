@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class ProfileSelectWindow extends BasicWindow {
-    private Main.Mode mode;
+    private AimTrainer.Mode mode;
     private ArrayList<Profile> profiles;
     private BasicWindow nextWindow;
     private Panel panel;
 
-    public ProfileSelectWindow(ArrayList<Profile> profiles, Main.Mode mode) {
+    public ProfileSelectWindow(ArrayList<Profile> profiles, AimTrainer.Mode mode) {
         super("Select Profile");
         this.mode = mode;
         this.profiles = profiles;
@@ -31,11 +31,14 @@ public class ProfileSelectWindow extends BasicWindow {
     }
 
     private void writeProfiles() {
+        // SHOULD I USE SUPPRESS CHECKSTYLE ANYWHERE??
+        // DO I NEED ANOTHER USER STORY (I CURRENTLY HAVE 3 IMPLEMENTED, NEED 4)
+        // THIS IS A PROBLEM BECAUSE THE GUI LIMITS THE AMOUNT I CAN DO
         for (final Profile profile : profiles) {
             panel.addComponent(new Button(profile.getName(), new Runnable() {
                 @Override
                 public void run() {
-                    if (mode == Main.Mode.GAME) {
+                    if (mode == AimTrainer.Mode.GAME) {
                         // need to shorten this lol
                         int gridSize = Integer.parseInt(TextInputDialog.showDialog(getTextGUI(), "Size:", "Enter the size of the grid", "10"));
                         nextWindow = new GameWindow(profile, gridSize);

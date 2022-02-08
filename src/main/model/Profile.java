@@ -1,5 +1,6 @@
 package model;
 
+//
 public class Profile {
     private String name; // username
     private int hits; // number of times target was hit

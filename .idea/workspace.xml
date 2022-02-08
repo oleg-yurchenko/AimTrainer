@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be.">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Implemented all methods in Target">
+      <change afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/model/TargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/TargetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +66,14 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/ui/windows" />
     </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="ui.AimTrainer" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in project_f7u9j">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -151,8 +156,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in project_f7u9j" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643960316865</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented all methods in Target">
+      <created>1644294776256</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1644294776256</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,7 +242,8 @@
     <MESSAGE value="Implemented all classes' stubs and tests for the classes so far." />
     <MESSAGE value="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile." />
     <MESSAGE value="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be." />
+    <MESSAGE value="Implemented all methods in Target" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented all methods in Target" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

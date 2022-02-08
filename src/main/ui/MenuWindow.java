@@ -24,7 +24,7 @@ public class MenuWindow extends BasicWindow {
         panel.addComponent(new Button("Play", new Runnable() {
             @Override
             public void run() {
-                profileSelectWindow = new ProfileSelectWindow(profiles, Main.Mode.GAME);
+                profileSelectWindow = new ProfileSelectWindow(profiles, AimTrainer.Mode.GAME);
                 getTextGUI().addWindow(profileSelectWindow);
                 profileSelectWindow.waitUntilClosed();
             }
@@ -33,7 +33,7 @@ public class MenuWindow extends BasicWindow {
         panel.addComponent(new Button("Profiles", new Runnable() {
             @Override
             public void run() {
-                profileSelectWindow = new ProfileSelectWindow(profiles, Main.Mode.PROFILE);
+                profileSelectWindow = new ProfileSelectWindow(profiles, AimTrainer.Mode.PROFILE);
                 getTextGUI().addWindow(profileSelectWindow);
                 profileSelectWindow.waitUntilClosed();
             }
