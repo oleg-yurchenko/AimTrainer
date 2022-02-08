@@ -1,6 +1,7 @@
 package model;
 
 public class Target {
+    // not sure how the GUI will process coordinates, float or int
     private float posX;
     private float posY;
     private String colour;
@@ -46,12 +47,14 @@ public class Target {
 
     // Effects: gets the distance from the center of the target to the given point
     public float getDistanceToPoint(float x, float y) {
-        return 0.0f; // stub
+        float distX = x - posX;
+        float distY = y - posY;
+        return (float) Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2)); // don't really need the exact precision
     }
 
     // Effects: returns true if the given coordinates are inside the target
     public boolean isHit(float x, float y) {
-        return false; // stub
+        return getDistanceToPoint(x, y) <= radius;
     }
 
     public float getPosX() {

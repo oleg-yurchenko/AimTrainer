@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile.">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/model/ProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/ProfileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/test/model/TargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/TargetTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +60,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/ui/windows" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -203,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643954980897</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be.">
+      <created>1643960316865</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643960316865</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,7 +229,8 @@
     <MESSAGE value="implemented very primitive UI interface." />
     <MESSAGE value="Implemented all classes' stubs and tests for the classes so far." />
     <MESSAGE value="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile." />
+    <MESSAGE value="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,6 +243,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1643960165223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1644294713210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

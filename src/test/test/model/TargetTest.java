@@ -24,9 +24,9 @@ public class TargetTest {
         assertEquals(15.0f, target1.getPosX());
 
         target2.moveX(-50.0f);
-        assertEquals(150.0f, target2.getPosX());
+        assertEquals(50.0f, target2.getPosX());
         target2.moveX(25.0f);
-        assertEquals(175.0f, target2.getPosX());
+        assertEquals(75.0f, target2.getPosX());
     }
 
     @Test
@@ -66,18 +66,16 @@ public class TargetTest {
         assertEquals(1.5f, target2.getRadius());
         target2.changeRadius(0.1f);
         assertEquals(1.6f, target2.getRadius());
-        target2.changeRadius(-2.0f);
-        assertEquals(0.0f, target2.getRadius());
     }
 
     @Test
     public void getDistanceToPointTest() {
         assertEquals(0.0f, target1.getDistanceToPoint(0.0f, 0.0f));
         assertEquals(1.0f, target1.getDistanceToPoint(1.0f, 0.0f));
-        assertEquals(Math.sqrt(2), target1.getDistanceToPoint(1.0f, 1.0f));
+        assertEquals((float)Math.sqrt(2), target1.getDistanceToPoint(1.0f, 1.0f));
 
         assertEquals(0.0f, target2.getDistanceToPoint(100.0f, 30.0f));
-        assertEquals(Math.sqrt(Math.pow(80, 2) + Math.pow(10, 2)), target2.getDistanceToPoint(20.0f, 20.0f));
+        assertEquals((float)Math.sqrt(Math.pow(80, 2) + Math.pow(10, 2)), target2.getDistanceToPoint(20.0f, 20.0f));
     }
 
     @Test
