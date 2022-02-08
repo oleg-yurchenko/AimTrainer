@@ -37,7 +37,7 @@ public class GameWindow extends BasicWindow {
     }
 
     // Returns a grid of buttons that the user can click, only one being the target marked by an "X".
-    @SuppressWarnings("checkstyle:MethodLength")
+    @SuppressWarnings("methodLength")
     private Panel generateTargets() {
         // Override method size??
 

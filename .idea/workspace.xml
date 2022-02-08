@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Fixed minor grammatical errors in README.md.">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added functionality to restart a Profile's progress and to delete a profile from ProfileWindow. Added a new method to Profile that resets the profile's values (except name).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/ProfileTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/ProfileTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/model/ProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/ProfileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in project_f7u9j">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -157,8 +152,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in project_f7u9j" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644298338401</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added functionality to restart a Profile's progress and to delete a profile from ProfileWindow. Added a new method to Profile that resets the profile's values (except name).">
+      <created>1644299344515</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1644299344515</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,7 +270,8 @@
     <MESSAGE value="Refactored Main to call AimTrainer, as was specified in the project description." />
     <MESSAGE value="Added further documentation for every method to make understanding the code much easier." />
     <MESSAGE value="Fixed minor grammatical errors in README.md." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed minor grammatical errors in README.md." />
+    <MESSAGE value="Added functionality to restart a Profile's progress and to delete a profile from ProfileWindow. Added a new method to Profile that resets the profile's values (except name)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality to restart a Profile's progress and to delete a profile from ProfileWindow. Added a new method to Profile that resets the profile's values (except name)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -281,6 +284,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1644294713210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1644299281209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
