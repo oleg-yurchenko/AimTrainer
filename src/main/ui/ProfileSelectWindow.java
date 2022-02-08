@@ -39,6 +39,9 @@ public class ProfileSelectWindow extends BasicWindow {
 
     // Adds all the profiles in this.profiles to the panel.
     private void generateScreen() {
+        // Clears the screen of current components
+        panel.removeAllComponents();
+
         // Displays all the profiles in this.profiles
         for (Profile profile : profiles) {
             writeProfile(profile);
@@ -68,11 +71,14 @@ public class ProfileSelectWindow extends BasicWindow {
                     int gridSize = Integer.parseInt(size);
                     nextWindow = new GameWindow(profile, gridSize);
                 } else {
-                    nextWindow = new ProfileWindow(profile);
+                    nextWindow = new ProfileWindow(profiles, profile);
                 }
                 // renders the given next window, whether it be to view the profile or play the game.
                 getTextGUI().addWindow(nextWindow);
                 nextWindow.waitUntilClosed();
+
+                // In case the profile was deleted in the ProfileWindow, so that the profile doesn't show up.
+                generateScreen();
             }
         }));
     }

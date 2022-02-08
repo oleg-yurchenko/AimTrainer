@@ -47,6 +47,14 @@ public class Profile {
         return sumOfDistances / (float) hits;
     }
 
+    // Effects: resets all the data in this profile except for the name.
+    // Modifies: this
+    public void resetProfile() {
+        hits = 0;
+        clicks = 0;
+        sumOfDistances = 0;
+    }
+
     public String getName() {
         return name;
     }

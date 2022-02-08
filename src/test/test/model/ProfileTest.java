@@ -36,6 +36,24 @@ public class ProfileTest {
     }
 
     @Test
+    public void resetProfileTest() {
+        profile.resetProfile();
+        assertEquals("Test", profile.getName());
+        assertEquals(0, profile.getClicks());
+        assertEquals(0, profile.getHits());
+        assertEquals(0.0f, profile.getSumOfDistances());
+
+        profile.hit(20.0f);
+        profile.click();
+        profile.resetProfile();
+        assertEquals("Test", profile.getName());
+        assertEquals(0, profile.getClicks());
+        assertEquals(0, profile.getHits());
+        assertEquals(0.0f, profile.getSumOfDistances());
+
+    }
+
+    @Test
     public void getAccuracyTest() {
         assertEquals(1.0f, profile.getAccuracy());
         profile.hit(20.0f);
