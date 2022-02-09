@@ -10,6 +10,7 @@ import java.util.HashSet;
 public class MenuWindow extends BasicWindow {
     private ProfileSelectWindow profileSelectWindow;
     private ArrayList<Profile> profiles;
+    private Panel panel;
 
     // Sets the initial variable values and shows the menu window and all its components.
     public MenuWindow(ArrayList<Profile> profileList) {
@@ -22,9 +23,15 @@ public class MenuWindow extends BasicWindow {
         defaultHints.add(Hint.FULL_SCREEN);
         this.setHints(defaultHints);
 
-        Panel panel = new Panel();
+        panel = new Panel();
         panel.setLayoutManager(new LinearLayout(Direction.VERTICAL));
 
+        generateScreen();
+
+        setComponent(panel);
+    }
+
+    private void generateScreen() {
         // The buttons of all the user actions.
         panel.addComponent(new Button("Play", new Runnable() {
             @Override
@@ -52,8 +59,6 @@ public class MenuWindow extends BasicWindow {
                 MenuWindow.this.close();
             }
         }));
-
-        setComponent(panel);
     }
 
 }
