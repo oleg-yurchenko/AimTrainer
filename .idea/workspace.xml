@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Split up code in long method GameWindow.generateTargets().">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Fixed checkstyle in MenuWindow (constructor method was too long).">
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lanterna_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkstyle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/ProfileTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/ProfileTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/project_f7u9j/test/model/TargetTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_f7u9j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project_f7u9j.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,15 +55,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -259,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644429344177</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changed variables to not use final unless required. updated the checkstyle.xml to that of the original one committed to this repo. Fixed small spacing error in AimTrainer.">
+      <created>1644440256401</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1644440256401</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,7 +310,9 @@
     <MESSAGE value="Added functionality to restart a Profile's progress and to delete a profile from ProfileWindow. Added a new method to Profile that resets the profile's values (except name)." />
     <MESSAGE value="Try to fix SuppressWarnings errors." />
     <MESSAGE value="Split up code in long method GameWindow.generateTargets()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Split up code in long method GameWindow.generateTargets()." />
+    <MESSAGE value="Changed variables to not use final unless required. updated the checkstyle.xml to that of the original one committed to this repo. Fixed small spacing error in AimTrainer." />
+    <MESSAGE value="Fixed checkstyle in MenuWindow (constructor method was too long)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed checkstyle in MenuWindow (constructor method was too long)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

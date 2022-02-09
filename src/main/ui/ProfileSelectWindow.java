@@ -94,7 +94,9 @@ public class ProfileSelectWindow extends BasicWindow {
                 // Asks the user to enter the name of the new profile
                 String name = TextInputDialog.showDialog(getTextGUI(), "Name:", "Enter the name of the profile", "");
                 // Makes a new profile with the given name and adds it to the list of profiles.
-                profiles.add(new Profile(name));
+                if (!(name == null)) {
+                    profiles.add(new Profile(name));
+                }
                 // "Refreshes" the panels by removing all the contents and regenerating the buttons.
                 // This makes sure the new profile is added to the list of other profiles.
                 panel.removeAllComponents();
