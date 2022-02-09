@@ -37,7 +37,6 @@ public class GameWindow extends BasicWindow {
     }
 
     // Returns a grid of buttons that the user can click, only one being the target marked by an "X".
-    @SuppressWarnings("methodLength")
     private Panel generateTargets() {
         // Override method size??
 
@@ -49,32 +48,43 @@ public class GameWindow extends BasicWindow {
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
                 if (target == i * gridSize + j) {
-                    // Target button.
-                    gamePanel.addComponent(new Button("X", new Runnable() {
-                        @Override
-                        public void run() {
-                            // no distance as screen coordinates cannot be implemented as desired in this phase.
-                            user.hit(0.0f);
-                            // generates a new target and refreshes the screen.
-                            target = random.nextInt(gridSize * gridSize);
-                            generateScreen();
-                        }
-                    }));
+                    // Target button
+                    placeTarget(gamePanel);
                 } else {
                     // "Miss" button.
-                    gamePanel.addComponent(new Button("0", new Runnable() {
-                        @Override
-                        public void run() {
-                            user.click();
-                            // refreshes the screen (target stays the same, updates statistics displayed below the grid)
-                            generateScreen();
-                        }
-                    }));
+                    placeMiss(gamePanel);
                 }
             }
         }
 
         return gamePanel;
+    }
+
+    // Places the target onto the gamePanel's grid layout
+    private void placeTarget(Panel gamePanel) {
+        // Target button.
+        gamePanel.addComponent(new Button("X", new Runnable() {
+            @Override
+            public void run() {
+                // no distance as screen coordinates cannot be implemented as desired in this phase.
+                user.hit(0.0f);
+                // generates a new target and refreshes the screen.
+                target = random.nextInt(gridSize * gridSize);
+                generateScreen();
+            }
+        }));
+    }
+
+    // Places a "miss" onto the gamePanel's grid layout
+    private void placeMiss(Panel gamePanel) {
+        gamePanel.addComponent(new Button("0", new Runnable() {
+            @Override
+            public void run() {
+                user.click();
+                // refreshes the screen (target stays the same, updates statistics displayed below the grid)
+                generateScreen();
+            }
+        }));
     }
 
     // Returns a panel of the user's statistics
