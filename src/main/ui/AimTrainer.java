@@ -33,7 +33,7 @@ public class AimTrainer {
         // Top level declaration for the user interface display
         terminal = new DefaultTerminalFactory().createTerminal();
         screen = new TerminalScreen(terminal);
-        gui =  new MultiWindowTextGUI(screen);
+        gui = new MultiWindowTextGUI(screen);
         // The menu window, which the user will be shown upon launching the game
         menuWindow = new MenuWindow(profiles);
 

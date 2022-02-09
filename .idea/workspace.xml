@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Try to fix SuppressWarnings errors.">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Split up code in long method GameWindow.generateTargets().">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkstyle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644301738730</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Split up code in long method GameWindow.generateTargets().">
+      <created>1644429344177</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1644429344177</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,7 +288,8 @@
     <MESSAGE value="Fixed minor grammatical errors in README.md." />
     <MESSAGE value="Added functionality to restart a Profile's progress and to delete a profile from ProfileWindow. Added a new method to Profile that resets the profile's values (except name)." />
     <MESSAGE value="Try to fix SuppressWarnings errors." />
-    <option name="LAST_COMMIT_MESSAGE" value="Try to fix SuppressWarnings errors." />
+    <MESSAGE value="Split up code in long method GameWindow.generateTargets()." />
+    <option name="LAST_COMMIT_MESSAGE" value="Split up code in long method GameWindow.generateTargets()." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,6 +302,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1644299281209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1644429609732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
