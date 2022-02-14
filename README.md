@@ -11,3 +11,5 @@ As a user:
 - I want to be able to practice my aim and have this reflected in my summary
 - I want to have multiple modes (multi-target, speed completion, and more)
 - I want to be able to reset a profile
+- I want to be able to save my profiles (including stats)
+- I want to be able to load any of my saved profiles
