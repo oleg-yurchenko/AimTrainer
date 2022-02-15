@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Fixed checkstyle in MenuWindow (constructor method was too long). Updated all XML files to before I messed it up.">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added 2 new user stories for persistent data.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20210307.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json-20210307.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/exceptions/InvalidJsonException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/exceptions/ReadProfileException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/exceptions/WriteProfileException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/persistence/Reader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/persistence/SaveObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/persistence/Writer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_f7u9j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project_f7u9j.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -62,6 +71,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/src/main/ui/windows" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
@@ -280,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644442480041</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added 2 new user stories for persistent data.">
+      <created>1644881301393</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1644881301393</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,7 +342,8 @@
     <MESSAGE value="Changed variables to not use final unless required. updated the checkstyle.xml to that of the original one committed to this repo. Fixed small spacing error in AimTrainer." />
     <MESSAGE value="Fixed checkstyle in MenuWindow (constructor method was too long)." />
     <MESSAGE value="Fixed checkstyle in MenuWindow (constructor method was too long). Updated all XML files to before I messed it up." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed checkstyle in MenuWindow (constructor method was too long). Updated all XML files to before I messed it up." />
+    <MESSAGE value="Added 2 new user stories for persistent data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 2 new user stories for persistent data." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

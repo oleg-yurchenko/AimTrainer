@@ -16,6 +16,15 @@ public class Profile {
         this.sumOfDistances = 0.0f;
     }
 
+    // Effects: creates a profile with the given name and statistics.
+    // Modifies: this
+    public Profile(String name, int hits, int clicks, float sumOfDistances) {
+        this.name = name;
+        this.hits = hits;
+        this.clicks = clicks;
+        this.sumOfDistances = sumOfDistances;
+    }
+
     // Effects: adds 1 to this.hits, this.clicks, and adds the distance to sumOfDistances
     // Modifies: this
     // Requires: distance >= 0 (must be absolute value)
