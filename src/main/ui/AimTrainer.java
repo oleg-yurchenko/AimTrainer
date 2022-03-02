@@ -7,8 +7,12 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import exceptions.ReadProfileException;
 import model.Profile;
+import org.json.JSONException;
+import persistence.*;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -29,8 +33,8 @@ public class AimTrainer {
 
     // Creates all top level variables (profiles, terminal, screen, gui) and displays the main menu window.
     public AimTrainer() throws IOException {
-        // Stores the profiles during the entire running time of the game
-        profiles = new ArrayList<>();
+        // Read profiles from data. If it doesn't exist, make a new file.
+        loadData();
         // Top level declaration for the user interface display
         terminal = new DefaultTerminalFactory().createTerminal();
         screen = new TerminalScreen(terminal);
@@ -46,5 +50,41 @@ public class AimTrainer {
 
         // Close the GUI
         screen.stopScreen();
+
+        // Save profiles to profiles.json
+        saveData();
+    }
+
+    // Effects: tries to read the existing file and load the data into the profiles variable.
+    //          If ReadProfileException or FileNotFoundException then creates a new file.
+    //          If JSONException then rewrites the existing file (JSON was corrupt).
+    // Modifies: this, File file
+    private void loadData() throws IOException {
+        try {
+            Reader reader = new Reader();
+            reader.readFile();
+            profiles = reader.getSavedProfiles();
+        } catch (ReadProfileException | FileNotFoundException e) {
+            System.out.println("profiles.json not found, creating new profiles.json");
+            Writer writer = new Writer();
+            writer.createFile();
+            profiles = new ArrayList<>();
+        } catch (JSONException e) {
+            System.out.println("Corrupt file, clearing and making new one");
+            Writer writer = new Writer();
+            writer.clearFile();
+            profiles = new ArrayList<>();
+        }
+    }
+
+    // Effects: Clears the file and stores the current profiles to the file (overwrites the file with new profile list)
+    // Modifies: File file
+    private void saveData() throws IOException {
+        Writer writer = new Writer();
+        writer.clearFile();
+        for (Profile p : profiles) {
+            writer.addSaveObject(new SaveObject(p));
+        }
+        writer.writeToFile();
     }
 }

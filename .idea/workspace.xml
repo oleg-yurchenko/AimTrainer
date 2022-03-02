@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added 2 new user stories for persistent data.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20210307.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/json-20210307.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/exceptions/InvalidJsonException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/exceptions/ReadProfileException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/exceptions/WriteProfileException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/persistence/Reader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/persistence/SaveObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/persistence/Writer.java" afterDir="false" />
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next.">
+      <change afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/testing.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/persistence/ReaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/persistence/SaveObjectTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/persistence/WriterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_f7u9j.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project_f7u9j.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/exceptions/InvalidJsonException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/exceptions/WriteProfileException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/persistence/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/persistence/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/persistence/SaveObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/persistence/SaveObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/persistence/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/persistence/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,12 +84,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in project_f7u9j">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ui.Main" />
       <module name="project_f7u9j" />
+      <option name="PROGRAM_PARAMETERS" value="-ea" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ui.*" />
@@ -127,6 +129,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_f7u9j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="PACKAGE_NAME" value="test.persistence" />
+      <option name="MAIN_CLASS_NAME" value="test.persistence.ReaderTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TargetTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="project_f7u9j" />
       <extension name="coverage">
@@ -145,6 +165,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_f7u9j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="PACKAGE_NAME" value="test.persistence" />
+      <option name="MAIN_CLASS_NAME" value="test.persistence.WriterTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <module name="project_f7u9j" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -156,16 +194,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test in project_f7u9j" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_f7u9j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.ProfileTest" />
       <item itemvalue="JUnit.TargetTest" />
+      <item itemvalue="JUnit.WriterTest" />
+      <item itemvalue="JUnit.ReaderTest" />
+      <item itemvalue="JUnit.test in project_f7u9j" />
       <item itemvalue="JUnit.All in project_f7u9j" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in project_f7u9j" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.test in project_f7u9j" />
+        <item itemvalue="JUnit.ReaderTest" />
+        <item itemvalue="JUnit.WriterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644881301393</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next.">
+      <created>1644884210853</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1644884210853</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,7 +412,8 @@
     <MESSAGE value="Fixed checkstyle in MenuWindow (constructor method was too long)." />
     <MESSAGE value="Fixed checkstyle in MenuWindow (constructor method was too long). Updated all XML files to before I messed it up." />
     <MESSAGE value="Added 2 new user stories for persistent data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 2 new user stories for persistent data." />
+    <MESSAGE value="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -356,6 +426,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1644429609732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/project_f7u9j$All_in_project_f7u9j.ic" NAME="All in project_f7u9j Coverage Results" MODIFIED="1646243467950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

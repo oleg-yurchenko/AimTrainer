@@ -1,6 +1,5 @@
 package persistence;
 
-import exceptions.InvalidJsonException;
 import model.Profile;
 import org.json.JSONObject;
 
@@ -25,26 +24,32 @@ public class SaveObject {
     //          Throws InvalidJsonException if the method cannot make a profile
     //          with the stored contents.
     // Modifies: this
-    public void makeProfile() throws InvalidJsonException {
-        // stub
+    public void makeProfile() {
+        String name = this.contents.getString("name");
+        int hits = this.contents.getInt("hits");
+        int clicks = this.contents.getInt("clicks");
+        float sumOfDistances = this.contents.getFloat("sumOfDistances");
+        this.profile = new Profile(name, hits, clicks, sumOfDistances);
     }
 
     // Effects: Makes a new profile and returns the profile
     //          Throws InvalidJsonException if the method cannot make a profile
     //          with the stored contents.
-    public Profile getNewProfile() throws InvalidJsonException {
-        return new Profile(""); // stub
+    public Profile getNewProfile() {
+        makeProfile();
+        return this.profile;
     }
 
     // Effects: Creates and stores a new JSONObject in contents from the stored profile
     // Modifies: this
     public void makeContents() {
-        // stub
+        this.contents = new JSONObject(this.profile);
     }
 
     // Effects: makes a new JSONObject in contents and returns the contents.
     public JSONObject getNewContents() {
-        return new JSONObject();
+        makeContents();
+        return this.contents;
     }
 
 

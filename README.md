@@ -12,4 +12,4 @@ As a user:
 - I want to have multiple modes (multi-target, speed completion, and more)
 - I want to be able to reset a profile
 - I want to be able to save my profiles (including stats)
-- I want to be able to load any of my saved profiles
+- I want to be able to load all of my saved profiles
