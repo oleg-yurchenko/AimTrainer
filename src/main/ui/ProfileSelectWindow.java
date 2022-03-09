@@ -13,7 +13,6 @@ public class ProfileSelectWindow extends BasicWindow {
     private ArrayList<Profile> profiles;
     private BasicWindow nextWindow;
     private Panel panel;
-    private Profile loopedProfile;
 
     // Sets the initial variable values and shows the profile window and all its components.
     public ProfileSelectWindow(ArrayList<Profile> profiles, AimTrainer.Mode mode) {
@@ -22,7 +21,6 @@ public class ProfileSelectWindow extends BasicWindow {
 
         this.mode = mode;
         this.profiles = profiles;
-        this.loopedProfile = null;
 
         // Set hints that indicate the window's properties and behaviour.
         HashSet<Hint> defaultHints = new HashSet<>();
@@ -46,8 +44,7 @@ public class ProfileSelectWindow extends BasicWindow {
 
         // Displays all the profiles in this.profiles
         for (Profile profile : profiles) {
-            loopedProfile = profile;
-            writeProfile();
+            writeProfile(profile);
         }
 
         writeAddProfile();
@@ -63,8 +60,8 @@ public class ProfileSelectWindow extends BasicWindow {
     }
 
     // Creates a button of the given profile and attaches it to the panel.
-    private void writeProfile() {
-        panel.addComponent(new Button(loopedProfile.getName(), new Runnable() {
+    private void writeProfile(Profile profile) {
+        panel.addComponent(new Button(profile.getName(), new Runnable() {
             @Override
             public void run() {
                 // checks which window to launch next
@@ -72,9 +69,9 @@ public class ProfileSelectWindow extends BasicWindow {
                     // Asks the user how big they want the game (how many targets in one column/row)
                     String size = TextInputDialog.showDialog(getTextGUI(), "Size", "Enter the size of the grid", "10");
                     int gridSize = Integer.parseInt(size);
-                    nextWindow = new GameWindow(loopedProfile, gridSize);
+                    nextWindow = new GameWindow(profile, gridSize);
                 } else {
-                    nextWindow = new ProfileWindow(profiles, loopedProfile);
+                    nextWindow = new ProfileWindow(profiles, profile);
                 }
                 // renders the given next window, whether it be to view the profile or play the game.
                 getTextGUI().addWindow(nextWindow);

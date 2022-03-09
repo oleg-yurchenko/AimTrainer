@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next.">
-      <change afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/testing.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test/persistence/ReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test/persistence/SaveObjectTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test/persistence/WriterTest.java" afterDir="false" />
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/exceptions/InvalidJsonException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/exceptions/WriteProfileException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/persistence/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/persistence/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/persistence/SaveObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/persistence/SaveObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/persistence/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/persistence/Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +73,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in project_f7u9j">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.Main" />
       <module name="project_f7u9j" />
@@ -223,8 +212,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="JUnit.test in project_f7u9j" />
         <item itemvalue="JUnit.ReaderTest" />
         <item itemvalue="JUnit.WriterTest" />
@@ -366,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644884210853</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Removed unneeded Exceptions that were never thrown, or were already built-in as runtime exceptions. Made new tests for alternate Constructors for Writer and Reader classes. Updated comments and cleaned up methods (some were too long, or had unnecessary code).">
+      <created>1646243636432</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1646243636432</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -413,7 +409,9 @@
     <MESSAGE value="Fixed checkstyle in MenuWindow (constructor method was too long). Updated all XML files to before I messed it up." />
     <MESSAGE value="Added 2 new user stories for persistent data." />
     <MESSAGE value="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next." />
+    <MESSAGE value="Removed unneeded Exceptions that were never thrown, or were already built-in as runtime exceptions. Made new tests for alternate Constructors for Writer and Reader classes. Updated comments and cleaned up methods (some were too long, or had unnecessary code)." />
+    <MESSAGE value="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
