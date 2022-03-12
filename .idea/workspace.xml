@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles.">
+      <change afterPath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lanterna-3.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646243636432</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles.">
+      <created>1646846200370</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1646846200370</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

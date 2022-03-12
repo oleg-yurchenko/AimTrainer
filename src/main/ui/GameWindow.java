@@ -1,41 +1,34 @@
 package ui;
 
-import com.googlecode.lanterna.gui2.*;
 import model.Profile;
 
-import java.util.HashSet;
+import javax.swing.*;
 import java.util.Random;
 
 // The Window that is shown when the user plays the game itself.
-public class GameWindow extends BasicWindow {
+public class GameWindow extends JPanel {
     private int gridSize;
     private Profile user;
     private Random random = new Random();
-    private Panel panel;
     private int target;
 
     // Sets the initial variable values and shows the game window and all its components.
     public GameWindow(Profile user, int gridSize) {
         // Title of the window
-        super("Game");
+        super();
 
         this.user = user;
         this.gridSize = gridSize;
 
         // Set hints that indicate the window's properties and behaviour.
-        HashSet<Hint> defaultHints = new HashSet<>();
-        defaultHints.add(Hint.FULL_SCREEN);
-        this.setHints(defaultHints);
-
-        panel = new Panel();
 
         // Generates a new target upon being run for the first time.
         target = random.nextInt(this.gridSize * this.gridSize);
-        generateScreen();
+        //generateScreen();
 
-        setComponent(panel);
     }
 
+    /*
     // Returns a grid of buttons that the user can click, only one being the target marked by an "X".
     private Panel generateTargets() {
         // Override method size??
@@ -122,4 +115,5 @@ public class GameWindow extends BasicWindow {
         panel.addComponent(generateQuickStats());
         panel.addComponent(generateExit());
     }
+    */
 }

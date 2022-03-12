@@ -1,64 +1,73 @@
 package ui;
 
-import com.googlecode.lanterna.gui2.*;
 import model.Profile;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 // This class represents the window where the user can choose to play a game, view a profile or quit.
-public class MenuWindow extends BasicWindow {
+public class MenuWindow extends JPanel {
     private ProfileSelectWindow profileSelectWindow;
     private ArrayList<Profile> profiles;
-    private Panel panel;
+    private AimTrainer aimTrainer;
 
     // Sets the initial variable values and shows the menu window and all its components.
-    public MenuWindow(ArrayList<Profile> profileList) {
+    public MenuWindow(AimTrainer aimTrainer) {
         // Title of the window
-        super("Menu");
-        this.profiles = profileList;
-
-        // Set hints that indicate the window's properties and behaviour.
-        HashSet<Hint> defaultHints = new HashSet<>();
-        defaultHints.add(Hint.FULL_SCREEN);
-        this.setHints(defaultHints);
-
-        panel = new Panel();
-        panel.setLayoutManager(new LinearLayout(Direction.VERTICAL));
+        super(new GridLayout(3, 1));
+        this.profiles = aimTrainer.getProfiles();
+        this.aimTrainer = aimTrainer;
 
         generateScreen();
-
-        setComponent(panel);
     }
 
     private void generateScreen() {
         // The buttons of all the user actions.
-        panel.addComponent(new Button("Play", new Runnable() {
-            @Override
-            public void run() {
-                // Opens the profile selector window and sets the mode to GAME
-                profileSelectWindow = new ProfileSelectWindow(profiles, AimTrainer.Mode.GAME);
-                getTextGUI().addWindow(profileSelectWindow);
-                profileSelectWindow.waitUntilClosed();
-            }
-        }));
-
-        panel.addComponent(new Button("Profiles", new Runnable() {
-            @Override
-            public void run() {
-                // Opens the profile selector window and sets the mode to PROFILE
-                profileSelectWindow = new ProfileSelectWindow(profiles, AimTrainer.Mode.PROFILE);
-                getTextGUI().addWindow(profileSelectWindow);
-                profileSelectWindow.waitUntilClosed();
-            }
-        }));
-
-        panel.addComponent(new Button("Quit", new Runnable() {
-            @Override
-            public void run() {
-                MenuWindow.this.close();
-            }
-        }));
+        this.add(makePlayButton());
+        this.add(makeProfilesButton());
+        this.add(makeQuitButton());
     }
 
+    // Effects: Creates the play button for the MenuWindow
+    private JButton makePlayButton() {
+        JButton playButton = new JButton("Play");
+        playButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Opens the profile selector window and sets the mode to GAME
+                profileSelectWindow = new ProfileSelectWindow(aimTrainer, AimTrainer.Mode.GAME);
+                aimTrainer.setPanel(profileSelectWindow);
+            }
+        });
+        return playButton;
+    }
+
+    // Effects: Creates the profiles button for the MenuWindow
+    private JButton makeProfilesButton() {
+        JButton profilesButton = new JButton("Profiles");
+        profilesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Opens the profile selector window and sets the mode to PROFILE
+                profileSelectWindow = new ProfileSelectWindow(aimTrainer, AimTrainer.Mode.PROFILE);
+                aimTrainer.setPanel(profileSelectWindow);
+            }
+        });
+        return profilesButton;
+    }
+
+    // Effects: Creates the Quit button for the MenuWindow
+    private JButton makeQuitButton() {
+        JButton quitButton = new JButton("Quit");
+        quitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                aimTrainer.exit();
+            }
+        });
+        return quitButton;
+    }
 }

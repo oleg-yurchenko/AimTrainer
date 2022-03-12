@@ -1,49 +1,37 @@
 package ui;
 
-import com.googlecode.lanterna.gui2.*;
-import com.googlecode.lanterna.gui2.dialogs.TextInputDialog;
 import model.Profile;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 // The window that is shown to the user to choose a profile to perform the next "action" (go to game or view profile).
-public class ProfileSelectWindow extends BasicWindow {
+public class ProfileSelectWindow extends JPanel {
     private AimTrainer.Mode mode;
-    private ArrayList<Profile> profiles;
-    private BasicWindow nextWindow;
-    private Panel panel;
+    private AimTrainer aimTrainer;
+    private JPanel nextWindow;
 
     // Sets the initial variable values and shows the profile window and all its components.
-    public ProfileSelectWindow(ArrayList<Profile> profiles, AimTrainer.Mode mode) {
+    public ProfileSelectWindow(AimTrainer aimTrainer, AimTrainer.Mode mode) {
         // Title of the window
-        super("Select Profile");
+        super();
 
         this.mode = mode;
-        this.profiles = profiles;
-
-        // Set hints that indicate the window's properties and behaviour.
-        HashSet<Hint> defaultHints = new HashSet<>();
-        defaultHints.add(Hint.FULL_SCREEN);
-        this.setHints(defaultHints);
-
-        panel = new Panel();
-        panel.setLayoutManager(new LinearLayout(Direction.VERTICAL));
+        this.aimTrainer = aimTrainer;
 
         // Displays all the profiles, an add profile button and a quit button.
         generateScreen();
-
-        setComponent(panel);
-
     }
+
 
     // Adds all the profiles in this.profiles to the panel.
     private void generateScreen() {
         // Clears the screen of current components
-        panel.removeAllComponents();
+        this.removeAll();
 
         // Displays all the profiles in this.profiles
-        for (Profile profile : profiles) {
+        for (Profile profile : aimTrainer.getProfiles()) {
             writeProfile(profile);
         }
 
@@ -51,54 +39,61 @@ public class ProfileSelectWindow extends BasicWindow {
 
         // Back button that takes the user back to the menu.
         // this doesn't warrant a separate function, as the functionality is very straightforward.
-        panel.addComponent(new Button("Back", new Runnable() {
+        JButton backButton = new JButton("Back");
+        backButton.addActionListener(new ActionListener() {
             @Override
-            public void run() {
-                ProfileSelectWindow.this.close();
+            public void actionPerformed(ActionEvent e) {
+                aimTrainer.setPanel(new MenuWindow(aimTrainer));
             }
-        }));
+        });
+        this.add(backButton);
+        aimTrainer.setPanel(this);
     }
 
     // Creates a button of the given profile and attaches it to the panel.
     private void writeProfile(Profile profile) {
-        panel.addComponent(new Button(profile.getName(), new Runnable() {
+        JButton profileButton = new JButton(profile.getName());
+        profileButton.addActionListener(new ActionListener() {
             @Override
-            public void run() {
+            public void actionPerformed(ActionEvent e) {
                 // checks which window to launch next
                 if (mode == AimTrainer.Mode.GAME) {
                     // Asks the user how big they want the game (how many targets in one column/row)
-                    String size = TextInputDialog.showDialog(getTextGUI(), "Size", "Enter the size of the grid", "10");
-                    int gridSize = Integer.parseInt(size);
+                    String size = JOptionPane.showInputDialog(null, "Enter the size of the grid");
+                    int gridSize;
+                    try {
+                        gridSize = Integer.parseInt(size);
+                    } catch (NumberFormatException err) {
+                        gridSize = 0;
+                    }
                     nextWindow = new GameWindow(profile, gridSize);
                 } else {
-                    nextWindow = new ProfileWindow(profiles, profile);
+                    nextWindow = new ProfileWindow(aimTrainer, profile);
                 }
                 // renders the given next window, whether it be to view the profile or play the game.
-                getTextGUI().addWindow(nextWindow);
-                nextWindow.waitUntilClosed();
-
-                // In case the profile was deleted in the ProfileWindow, so that the profile doesn't show up.
-                generateScreen();
+                aimTrainer.setPanel(nextWindow);
             }
-        }));
+        });
+        this.add(profileButton);
     }
 
     // Creates a button to add a profile and attaches it to the panel
     private void writeAddProfile() {
-        panel.addComponent(new Button("Add Profile", new Runnable() {
+        JButton addProfileButton = new JButton("Add Profile");
+        addProfileButton.addActionListener(new ActionListener() {
             @Override
-            public void run() {
+            public void actionPerformed(ActionEvent e) {
                 // Asks the user to enter the name of the new profile
-                String name = TextInputDialog.showDialog(getTextGUI(), "Name:", "Enter the name of the profile", "");
+                String name = JOptionPane.showInputDialog(null, "Enter the name of your profile");
                 // Makes a new profile with the given name and adds it to the list of profiles.
                 if (!(name == null)) {
-                    profiles.add(new Profile(name));
+                    aimTrainer.getProfiles().add(new Profile(name));
                 }
                 // "Refreshes" the panels by removing all the contents and regenerating the buttons.
                 // This makes sure the new profile is added to the list of other profiles.
-                panel.removeAllComponents();
                 generateScreen();
             }
-        }));
+        });
+        this.add(addProfileButton);
     }
 }
