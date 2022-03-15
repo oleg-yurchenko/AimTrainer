@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles.">
-      <change afterPath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" afterDir="false" />
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow.">
+      <change afterPath="$PROJECT_DIR$/src/main/exceptions/GameOverException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/model/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/model/TimedGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/lanterna-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646846200370</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow.">
+      <created>1647056994667</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1647056994667</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -424,12 +430,13 @@
     <MESSAGE value="Set out a simple outline for how saving and reading will be handled. Test cases and implementation will be done next." />
     <MESSAGE value="Removed unneeded Exceptions that were never thrown, or were already built-in as runtime exceptions. Made new tests for alternate Constructors for Writer and Reader classes. Updated comments and cleaned up methods (some were too long, or had unnecessary code)." />
     <MESSAGE value="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles." />
+    <MESSAGE value="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint suspend="NONE" type="java-exception">
+        <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>

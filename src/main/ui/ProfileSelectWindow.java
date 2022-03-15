@@ -1,6 +1,8 @@
 package ui;
 
+import model.Game;
 import model.Profile;
+import model.TimedGame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -59,14 +61,16 @@ public class ProfileSelectWindow extends JPanel {
                 // checks which window to launch next
                 if (mode == AimTrainer.Mode.GAME) {
                     // Asks the user how big they want the game (how many targets in one column/row)
-                    String size = JOptionPane.showInputDialog(null, "Enter the size of the grid");
+                    /*String size = JOptionPane.showInputDialog(null, "Enter the size of the grid");
                     int gridSize;
                     try {
                         gridSize = Integer.parseInt(size);
                     } catch (NumberFormatException err) {
                         gridSize = 0;
-                    }
-                    nextWindow = new GameWindow(profile, gridSize);
+                    }*/
+                    // time in milliseconds (1000 is one second)
+                    Game gameMode = new TimedGame(profile, 10000);
+                    nextWindow = new GameWindow(aimTrainer, profile, gameMode);
                 } else {
                     nextWindow = new ProfileWindow(aimTrainer, profile);
                 }

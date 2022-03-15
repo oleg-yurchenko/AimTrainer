@@ -1,85 +1,120 @@
 package ui;
 
+import exceptions.GameOverException;
+import model.Game;
 import model.Profile;
 
 import javax.swing.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Random;
 
 // The Window that is shown when the user plays the game itself.
 public class GameWindow extends JPanel {
-    private int gridSize;
     private Profile user;
     private Random random = new Random();
-    private int target;
+    private Game gameMode;
+    private TargetDrawing targetDrawing;
+    private AimTrainer aimTrainer;
+    private MouseListener mouseListener;
 
     // Sets the initial variable values and shows the game window and all its components.
-    public GameWindow(Profile user, int gridSize) {
-        // Title of the window
+    public GameWindow(AimTrainer aimTrainer, Profile user, Game gameMode) {
         super();
 
+        this.aimTrainer = aimTrainer;
         this.user = user;
-        this.gridSize = gridSize;
+        this.gameMode = gameMode;
+        this.targetDrawing = new TargetDrawing(null);
 
-        // Set hints that indicate the window's properties and behaviour.
+        this.add(targetDrawing);
 
-        // Generates a new target upon being run for the first time.
-        target = random.nextInt(this.gridSize * this.gridSize);
-        //generateScreen();
+        Thread gameThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        gameMode.tick();
+                        Thread.sleep(1);
+                    } catch (GameOverException | InterruptedException e) {
+                        System.out.println("Game Over");
+                        break;
+                    }
+                }
+                System.out.println("game thread over");
+            }
+        }, "gameThread");
+        Thread screenThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (gameThread.isAlive()) {
+                    gameLoop();
+                    System.out.println("screen thread");
+                    try {
+                        Thread.sleep(1);
+                    } catch (Exception e) {
+                        System.err.println(e);
+                    }
+                }
+                System.out.println("screen thread over");
+                stopMouseListening();
+                endGameScreen();
+            }
+        }, "screenThread");
 
+        startMouseListening();
+        gameThread.start();
+        screenThread.start();
+    }
+
+    private void startMouseListening() {
+        this.mouseListener = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                gameMode.onClick(e.getX(), e.getY());
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        };
+        this.addMouseListener(this.mouseListener);
+    }
+
+    private void stopMouseListening() {
+        this.removeMouseListener(this.mouseListener);
+    }
+
+    private void gameLoop() {
+
+        // draw target
+        targetDrawing.setTarget(gameMode.getTarget());
+        this.repaint();
+    }
+
+    private void endGameScreen() {
+        this.removeAll();
+        // Add restart/back buttons
+        // maybe quick stats?
     }
 
     /*
-    // Returns a grid of buttons that the user can click, only one being the target marked by an "X".
-    private Panel generateTargets() {
-        // Override method size??
-
-        // Creates a new panel with a gridlayout based on the specified size.
-        Panel gamePanel = new Panel();
-        gamePanel.setLayoutManager(new GridLayout(gridSize));
-
-        // Loops through the grid to add the buttons and target to the game panel.
-        for (int i = 0; i < gridSize; i++) {
-            for (int j = 0; j < gridSize; j++) {
-                if (target == i * gridSize + j) {
-                    // Target button
-                    placeTarget(gamePanel);
-                } else {
-                    // "Miss" button.
-                    placeMiss(gamePanel);
-                }
-            }
-        }
-
-        return gamePanel;
-    }
-
-    // Places the target onto the gamePanel's grid layout
-    private void placeTarget(Panel gamePanel) {
-        // Target button.
-        gamePanel.addComponent(new Button("X", new Runnable() {
-            @Override
-            public void run() {
-                // no distance as screen coordinates cannot be implemented as desired in this phase.
-                user.hit(0.0f);
-                // generates a new target and refreshes the screen.
-                target = random.nextInt(gridSize * gridSize);
-                generateScreen();
-            }
-        }));
-    }
-
-    // Places a "miss" onto the gamePanel's grid layout
-    private void placeMiss(Panel gamePanel) {
-        gamePanel.addComponent(new Button("0", new Runnable() {
-            @Override
-            public void run() {
-                user.click();
-                // refreshes the screen (target stays the same, updates statistics displayed below the grid)
-                generateScreen();
-            }
-        }));
-    }
-
     // Returns a panel of the user's statistics
     private Panel generateQuickStats() {
         Panel statsPanel = new Panel();
@@ -103,17 +138,6 @@ public class GameWindow extends JPanel {
         }));
 
         return exitPanel;
-    }
-
-    // Clears the panel and adds all the desired components to the main panel.
-    private void generateScreen() {
-        // removes all the components (as some may have changed: grid or stats)
-        panel.removeAllComponents();
-        panel.setLayoutManager(new LinearLayout(Direction.VERTICAL));
-        // Adds the various components in order.
-        panel.addComponent(generateTargets());
-        panel.addComponent(generateQuickStats());
-        panel.addComponent(generateExit());
     }
     */
 }
