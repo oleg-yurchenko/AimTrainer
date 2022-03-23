@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame.">
-      <change afterPath="$PROJECT_DIR$/src/main/model/MovingGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test/model/MovingGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/testing.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/testing.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/model/DefaultGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/DefaultGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/persistence/WriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/persistence/WriterTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,10 +14,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="popup-refactor" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="swingui" />
+        <entry key="$PROJECT_DIR$" value="popup-refactor" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -226,8 +217,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="JUnit.test.model in project_f7u9j" />
+        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="JUnit.test in project_f7u9j" />
         <item itemvalue="JUnit.ReaderTest" />
       </list>
@@ -417,7 +408,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="popup-refactor" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
