@@ -5,6 +5,8 @@ import model.Game;
 import model.Profile;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
@@ -32,31 +34,30 @@ public class GameWindow extends JPanel {
         Thread gameThread = new Thread(new Runnable() {
             @Override
             public void run() {
+                gameMode.gameStart();
                 while (true) {
                     try {
                         gameMode.tick();
                         Thread.sleep(1);
                     } catch (GameOverException | InterruptedException e) {
-                        System.out.println("Game Over");
                         break;
                     }
                 }
-                System.out.println("game thread over");
             }
         }, "gameThread");
         Thread screenThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 while (gameThread.isAlive()) {
-                    gameLoop();
-                    System.out.println("screen thread");
+                    if (gameMode.getTarget() != null) {
+                        gameLoop();
+                    }
                     try {
                         Thread.sleep(1);
                     } catch (Exception e) {
                         System.err.println(e);
                     }
                 }
-                System.out.println("screen thread over");
                 stopMouseListening();
                 endGameScreen();
             }
@@ -102,7 +103,6 @@ public class GameWindow extends JPanel {
     }
 
     private void gameLoop() {
-
         // draw target
         targetDrawing.setTarget(gameMode.getTarget());
         this.repaint();
@@ -111,7 +111,32 @@ public class GameWindow extends JPanel {
     private void endGameScreen() {
         this.removeAll();
         // Add restart/back buttons
+        this.add(makeRetryButton());
+        this.add(makeExitButton());
+        aimTrainer.setPanel(this);
         // maybe quick stats?
+    }
+
+    private JButton makeRetryButton() {
+        JButton retryButton = new JButton("Retry");
+        retryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                aimTrainer.setPanel(new GameWindow(aimTrainer, user, gameMode));
+            }
+        });
+        return retryButton;
+    }
+
+    private JButton makeExitButton() {
+        JButton exitButton = new JButton("Exit");
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                aimTrainer.setPanel(new MenuWindow(aimTrainer));
+            }
+        });
+        return exitButton;
     }
 
     /*

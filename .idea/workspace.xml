@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow.">
-      <change afterPath="$PROJECT_DIR$/src/main/exceptions/GameOverException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/model/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/model/TimedGame.java" afterDir="false" />
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes.">
+      <change afterPath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/model/DefaultGameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/model/GameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/testing.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/testing.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/TimedGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/DefaultGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" afterDir="false" />
@@ -159,24 +165,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="project_f7u9j" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.persistence.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
-      <option name="PACKAGE_NAME" value="test.persistence" />
-      <option name="MAIN_CLASS_NAME" value="test.persistence.WriterTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <module name="project_f7u9j" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -206,22 +194,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test.model in project_f7u9j" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project_f7u9j" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="PACKAGE_NAME" value="test.model" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.ProfileTest" />
       <item itemvalue="JUnit.TargetTest" />
-      <item itemvalue="JUnit.WriterTest" />
       <item itemvalue="JUnit.ReaderTest" />
       <item itemvalue="JUnit.test in project_f7u9j" />
       <item itemvalue="JUnit.All in project_f7u9j" />
+      <item itemvalue="JUnit.test.model in project_f7u9j" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in project_f7u9j" />
+        <item itemvalue="JUnit.test.model in project_f7u9j" />
         <item itemvalue="JUnit.test in project_f7u9j" />
         <item itemvalue="JUnit.ReaderTest" />
-        <item itemvalue="JUnit.WriterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -381,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647056994667</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes.">
+      <created>1647327315895</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1647327315895</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -431,7 +444,8 @@
     <MESSAGE value="Removed unneeded Exceptions that were never thrown, or were already built-in as runtime exceptions. Made new tests for alternate Constructors for Writer and Reader classes. Updated comments and cleaned up methods (some were too long, or had unnecessary code)." />
     <MESSAGE value="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles." />
     <MESSAGE value="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow." />
+    <MESSAGE value="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

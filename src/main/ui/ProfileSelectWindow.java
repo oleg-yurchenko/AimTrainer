@@ -2,7 +2,8 @@ package ui;
 
 import model.Game;
 import model.Profile;
-import model.TimedGame;
+import model.DefaultGame;
+import model.ShrinkingGame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -69,7 +70,7 @@ public class ProfileSelectWindow extends JPanel {
                         gridSize = 0;
                     }*/
                     // time in milliseconds (1000 is one second)
-                    Game gameMode = new TimedGame(profile, 10000);
+                    Game gameMode = new ShrinkingGame(profile, 10000);
                     nextWindow = new GameWindow(aimTrainer, profile, gameMode);
                 } else {
                     nextWindow = new ProfileWindow(aimTrainer, profile);

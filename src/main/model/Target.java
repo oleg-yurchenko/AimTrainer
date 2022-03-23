@@ -73,4 +73,8 @@ public class Target {
     public float getRadius() {
         return radius;
     }
+
+    public void setRadius(float radius) {
+        this.radius = radius;
+    }
 }
