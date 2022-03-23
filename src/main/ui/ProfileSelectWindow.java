@@ -61,7 +61,10 @@ public class ProfileSelectWindow extends JPanel {
                     Object[] gameOptions = {"Cancel", "Moving", "Shrinking", "Default"};
                     int gameChoice = JOptionPane.showOptionDialog(null, "Choose your game mode", "", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, gameOptions, gameOptions[3]);
                     // seconds * 1000 to convert to milliseconds
-                    int time = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the time for your game (in seconds)")) * 1000;
+                    int time = 0;
+                    if (gameChoice != 0) {
+                        time = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the time for your game (in seconds)")) * 1000;
+                    }
                     Game gameMode;
                     switch (gameChoice) {
                         case 3: gameMode = new DefaultGame(profile, time);

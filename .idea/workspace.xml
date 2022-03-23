@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="project_f7u9j:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="merge updated popups to the swing branch.">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added a timer to GameWindow in top right to help keep track of time.">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/project_f7u9j_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -404,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648021138322</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added a timer to GameWindow in top right to help keep track of time.">
+      <created>1648021561243</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1648021561243</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -457,7 +473,8 @@
     <MESSAGE value="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes." />
     <MESSAGE value="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame." />
     <MESSAGE value="merge updated popups to the swing branch." />
-    <option name="LAST_COMMIT_MESSAGE" value="merge updated popups to the swing branch." />
+    <MESSAGE value="Added a timer to GameWindow in top right to help keep track of time." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a timer to GameWindow in top right to help keep track of time." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

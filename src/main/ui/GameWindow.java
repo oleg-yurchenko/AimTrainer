@@ -117,11 +117,21 @@ public class GameWindow extends JPanel {
 
     private void endGameScreen() {
         this.removeAll();
+        setLayout(new GridBagLayout());
+        GridBagConstraints constraint = new GridBagConstraints();
+        constraint.gridheight = 1;
+        constraint.gridwidth = 1;
+        constraint.gridx = 0;
+        constraint.gridy = 0;
         // Add restart/back buttons
-        this.add(makeRetryButton());
-        this.add(makeExitButton());
+        this.add(makeRetryButton(), constraint);
+        constraint.gridx = 1;
+        this.add(makeExitButton(), constraint);
+        constraint.gridwidth = 2;
+        constraint.gridy = 1;
+        constraint.gridx = GridBagConstraints.REMAINDER;
+        this.add(makeStatsPanel(), constraint);
         aimTrainer.setPanel(this);
-        // maybe quick stats?
     }
 
     private JButton makeRetryButton() {
@@ -146,30 +156,13 @@ public class GameWindow extends JPanel {
         return exitButton;
     }
 
-    /*
-    // Returns a panel of the user's statistics
-    private Panel generateQuickStats() {
-        Panel statsPanel = new Panel();
-        statsPanel.setLayoutManager(new GridLayout(2));
+    private JPanel makeStatsPanel() {
+        JPanel stats = new JPanel(new GridLayout(2, 2));
+        stats.add(new Label("Precision:"));
+        stats.add(new Label(Float.toString(gameMode.getProfile().getPrecision())));
+        stats.add(new Label("Accuracy:"));
+        stats.add(new Label(Float.toString(gameMode.getProfile().getAccuracy())));
 
-        // loadStats is a static function that generates the given user's statistics onto a given panel.
-        ProfileWindow.loadStats(statsPanel, user);
-
-        return statsPanel;
+        return stats;
     }
-
-    // Returns the panel with the exit button to go back to the menu.
-    private Panel generateExit() {
-        Panel exitPanel = new Panel();
-
-        exitPanel.addComponent(new Button("Exit", new Runnable() {
-            @Override
-            public void run() {
-                GameWindow.this.close();
-            }
-        }));
-
-        return exitPanel;
-    }
-    */
 }
