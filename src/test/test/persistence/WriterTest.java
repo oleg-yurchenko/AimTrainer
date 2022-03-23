@@ -26,7 +26,7 @@ public class WriterTest {
         if(testFile.delete()) {
             // desired output
         } else {
-            System.out.println("unable to delete test file");
+            // Test file does not exist, which is ok too.
         }
     }
 

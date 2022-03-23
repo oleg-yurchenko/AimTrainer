@@ -18,10 +18,11 @@ public class ShrinkingGame extends Game {
     }
 
     @Override
-    public void onClick(int cursorX, int cursorY) {
-        if (target.getRadius() != START_RADIUS) {
-            target.setRadius(START_RADIUS);
+    public Target makeTarget(float radius) {
+        Target tempTarget = super.makeTarget(radius);
+        if (tempTarget.getRadius() != START_RADIUS) {
+            tempTarget.setRadius(START_RADIUS);
         }
-        super.onClick(cursorX, cursorY);
+        return tempTarget;
     }
 }

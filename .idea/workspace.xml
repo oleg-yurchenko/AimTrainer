@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes.">
-      <change afterPath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test/model/DefaultGameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test/model/GameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" afterDir="false" />
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame.">
+      <change afterPath="$PROJECT_DIR$/src/main/model/MovingGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test/model/MovingGameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/testing.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/testing.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/model/Target.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Target.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/TimedGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/DefaultGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test/model/DefaultGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/DefaultGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test/persistence/WriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/persistence/WriterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="swingui" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -394,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647327315895</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame.">
+      <created>1648012033956</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1648012033956</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -408,7 +417,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="popup-refactor" />
                       </list>
                     </value>
                   </entry>
@@ -445,7 +454,8 @@
     <MESSAGE value="Updated ProfileSelectWindow and writeProfile method to properly associate buttons with the desired profile instead of the last profile in profiles." />
     <MESSAGE value="Added functionality with swing for ProfileSelectWindow, ProfileWindow, MenuWindow." />
     <MESSAGE value="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a TimedGame to the application. Added multithreading to update the game and the graphics without hanging either. Still need to clean up the GameWindow constructor, and add new game modes." />
+    <MESSAGE value="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame." />
+    <option name="LAST_COMMIT_MESSAGE" value="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

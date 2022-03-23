@@ -82,67 +82,35 @@ public class AimTrainer extends JFrame {
     // Effects: Asks the user if they'd like to load an existing save file. If they choose yes, the json file is loaded
     //          Otherwise, an empty Profiles list is initialized
     private void askSaveDataLoad() {
-        JLabel question = new JLabel("Would you like to load saved data?");
-        JButton yesButton = new JButton("yes");
-        JButton noButton = new JButton("no");
-        JPanel popupPanel = makePopupPanel(question, yesButton, noButton);
-        Popup popup = new PopupFactory().getPopup(this, popupPanel, 0, frameHeight / 2);
-        yesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    loadData();
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(popupPanel, "Unable to load data");
-                }
-                popup.hide();
+        String question = "Would you like to load saved data?";
+        if (confirmDialog(question) == JOptionPane.YES_OPTION) {
+            try {
+                loadData();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Unable to load data");
             }
-        });
-        noButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                popup.hide();
-            }
-        });
-        popup.show();
+        }
     }
 
     // Effects: Asks the user if they'd like to save their data to an existing save file (or create a new one if it
     //          doesn't exist). Otherwise, nothing happens to the JSON file.
     public void exit() {
-        JLabel question = new JLabel("Would you like to save before exiting? (this will overwrite any previous save)");
-        JButton yesButton = new JButton("yes");
-        JButton noButton = new JButton("no");
-        JPanel popupPanel = makePopupPanel(question, yesButton, noButton);
-        yesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    saveData();
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(popupPanel, "Unable to save data");
-                }
-                System.exit(0);
+        String question = "Would you like to save before exiting? (this will overwrite any previous save)";
+        if (confirmDialog(question) == JOptionPane.YES_OPTION) {
+            try {
+                saveData();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Unable to save data");
             }
-        });
-        noButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-        Popup popup = new PopupFactory().getPopup(this, popupPanel, 0, frameHeight / 2);
-        popup.show();
+        }
+        System.exit(0);
     }
 
-    // Effects: creates a new JPanel that contains the given label and a pair of buttons for a popup.
-    private JPanel makePopupPanel(JLabel label, JButton button1, JButton button2) {
-        JPanel popupPanel = new JPanel();
-        popupPanel.setLayout(new BoxLayout(popupPanel, BoxLayout.PAGE_AXIS));
-        popupPanel.add(label, BorderLayout.CENTER);
-        popupPanel.add(button1, BorderLayout.CENTER);
-        popupPanel.add(button2, BorderLayout.CENTER);
-        return popupPanel;
+    // Effects: Shows a dialogue for yes/no prompts with a given question and returns the selected option
+    //          0 for yes, 1 for no.
+    //          alternatively, JOptionPane.YES_OPTION for yes and JOptionPane.NO_OPTION for no.
+    private int confirmDialog(String prompt) {
+        return JOptionPane.showConfirmDialog(this, prompt, "", JOptionPane.YES_NO_OPTION);
     }
 
     // Effects: Creates and returns a new WindowListener that asks the user to load data upon launching the application

@@ -1,9 +1,6 @@
 package ui;
 
-import model.Game;
-import model.Profile;
-import model.DefaultGame;
-import model.ShrinkingGame;
+import model.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -61,17 +58,25 @@ public class ProfileSelectWindow extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // checks which window to launch next
                 if (mode == AimTrainer.Mode.GAME) {
-                    // Asks the user how big they want the game (how many targets in one column/row)
-                    /*String size = JOptionPane.showInputDialog(null, "Enter the size of the grid");
-                    int gridSize;
-                    try {
-                        gridSize = Integer.parseInt(size);
-                    } catch (NumberFormatException err) {
-                        gridSize = 0;
-                    }*/
-                    // time in milliseconds (1000 is one second)
-                    Game gameMode = new ShrinkingGame(profile, 10000);
-                    nextWindow = new GameWindow(aimTrainer, profile, gameMode);
+                    Object[] gameOptions = {"Cancel", "Moving", "Shrinking", "Default"};
+                    int gameChoice = JOptionPane.showOptionDialog(null, "Choose your game mode", "", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, gameOptions, gameOptions[3]);
+                    // seconds * 1000 to convert to milliseconds
+                    int time = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the time for your game (in seconds)")) * 1000;
+                    Game gameMode;
+                    switch (gameChoice) {
+                        case 3: gameMode = new DefaultGame(profile, time);
+                                break;
+                        case 2: gameMode = new ShrinkingGame(profile, time);
+                                break;
+                        case 1: gameMode = new MovingGame(profile, time);
+                                break;
+                        default: gameMode = null;
+                    }
+                    if (gameMode != null) {
+                        nextWindow = new GameWindow(aimTrainer, profile, gameMode);
+                    } else {
+                        nextWindow = new ProfileSelectWindow(aimTrainer, mode);
+                    }
                 } else {
                     nextWindow = new ProfileWindow(aimTrainer, profile);
                 }

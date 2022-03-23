@@ -12,9 +12,11 @@ public class DefaultGameTest extends GameTest {
     @BeforeEach
     public void beforeEach() {
         game = new DefaultGame(new Profile("test"), 30);
+        game.gameStart(); // generates target
     }
 
     @Override
+    @Test
     public void constructorTest() {
         super.constructorTest();
         assertEquals(30, game.getTime());

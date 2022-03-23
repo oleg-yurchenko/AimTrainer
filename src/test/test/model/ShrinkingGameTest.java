@@ -16,19 +16,21 @@ public class ShrinkingGameTest extends GameTest {
     }
 
     @Override
+    @Test
     public void constructorTest() {
         super.constructorTest();
-        assertEquals(10, game.getTime());
+        assertEquals(10000, game.getTime());
     }
 
     @Override
+    @Test
     public void tickTest() {
         float radiusHolder = game.getTarget().getRadius();
         assertEquals(radiusHolder, game.getTarget().getRadius());
 
         super.tickTest();
 
-        assertEquals(radiusHolder - 0.01f, game.getTarget().getRadius());
+        assertEquals(radiusHolder - ShrinkingGame.RADIUS_REDUCTION, game.getTarget().getRadius());
     }
 
     @Test
