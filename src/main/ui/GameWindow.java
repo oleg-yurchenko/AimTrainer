@@ -5,6 +5,7 @@ import model.Game;
 import model.Profile;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -106,6 +107,12 @@ public class GameWindow extends JPanel {
         // draw target
         targetDrawing.setTarget(gameMode.getTarget());
         this.repaint();
+    }
+
+    @Override
+    public void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        graphics.drawString(Float.toString(Math.round((float)gameMode.getTime() / 10) / 100.0f), 20, 20);
     }
 
     private void endGameScreen() {
