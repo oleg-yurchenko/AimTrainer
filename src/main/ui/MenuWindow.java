@@ -14,9 +14,9 @@ public class MenuWindow extends JPanel {
     private ArrayList<Profile> profiles;
     private AimTrainer aimTrainer;
 
-    // Sets the initial variable values and shows the menu window and all its components.
+    // Effects: Sets the initial variable values and shows the menu window and all its components.
+    // Modifies: this
     public MenuWindow(AimTrainer aimTrainer) {
-        // Title of the window
         super(new GridLayout(3, 1));
         this.profiles = aimTrainer.getProfiles();
         this.aimTrainer = aimTrainer;
@@ -24,6 +24,8 @@ public class MenuWindow extends JPanel {
         generateScreen();
     }
 
+    // Effects: Adds all the components to the panel.
+    // Modifies: this
     private void generateScreen() {
         // The buttons of all the user actions.
         this.add(makePlayButton());
@@ -31,7 +33,7 @@ public class MenuWindow extends JPanel {
         this.add(makeQuitButton());
     }
 
-    // Effects: Creates the play button for the MenuWindow
+    // Effects: Creates and returns the play button for the MenuWindow
     private JButton makePlayButton() {
         JButton playButton = new JButton("Play");
         playButton.addActionListener(new ActionListener() {
@@ -45,7 +47,7 @@ public class MenuWindow extends JPanel {
         return playButton;
     }
 
-    // Effects: Creates the profiles button for the MenuWindow
+    // Effects: Creates and returns the profiles button for the MenuWindow
     private JButton makeProfilesButton() {
         JButton profilesButton = new JButton("Profiles");
         profilesButton.addActionListener(new ActionListener() {
@@ -59,7 +61,7 @@ public class MenuWindow extends JPanel {
         return profilesButton;
     }
 
-    // Effects: Creates the Quit button for the MenuWindow
+    // Effects: Creates and returns the Quit button for the MenuWindow
     private JButton makeQuitButton() {
         JButton quitButton = new JButton("Quit");
         quitButton.addActionListener(new ActionListener() {

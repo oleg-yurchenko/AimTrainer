@@ -22,6 +22,7 @@ public class GameWindow extends JPanel {
     private MouseListener mouseListener;
 
     // Sets the initial variable values and shows the game window and all its components.
+    // Starts the game and screen threads to start the game cycle.
     public GameWindow(AimTrainer aimTrainer, Profile user, Game gameMode) {
         super();
 
@@ -32,7 +33,18 @@ public class GameWindow extends JPanel {
 
         this.add(targetDrawing);
 
-        Thread gameThread = new Thread(new Runnable() {
+        Thread gameThread = makeGameThread();
+        Thread screenThread = makeScreenThread(gameThread);
+
+        startMouseListening();
+        gameThread.start();
+        screenThread.start();
+    }
+
+    // Effects: Returns a new thread that is used to start the game, and then tick() the Game until GameOver is thrown.
+    // Modifies: gameMode
+    private Thread makeGameThread() {
+        return new Thread(new Runnable() {
             @Override
             public void run() {
                 gameMode.gameStart();
@@ -46,7 +58,12 @@ public class GameWindow extends JPanel {
                 }
             }
         }, "gameThread");
-        Thread screenThread = new Thread(new Runnable() {
+    }
+
+    // Effects: Returns a new thread that is used to draw onto the screen. The gameThread is passed in so that this
+    //          thread stops when gameThread dies.
+    private Thread makeScreenThread(Thread gameThread) {
+        return new Thread(new Runnable() {
             @Override
             public void run() {
                 while (gameThread.isAlive()) {
@@ -63,12 +80,10 @@ public class GameWindow extends JPanel {
                 endGameScreen();
             }
         }, "screenThread");
-
-        startMouseListening();
-        gameThread.start();
-        screenThread.start();
     }
 
+    // Effects: Adds a MouseListener to the window which runs the game's onClick() method whenever the mouse is pressed.
+    // Modifies: this
     private void startMouseListening() {
         this.mouseListener = new MouseListener() {
             @Override
@@ -99,22 +114,28 @@ public class GameWindow extends JPanel {
         this.addMouseListener(this.mouseListener);
     }
 
+    // Effects: Removes the MouseListener to stop polling for the game's onClick() function.
     private void stopMouseListening() {
         this.removeMouseListener(this.mouseListener);
     }
 
+    // Effects: Sets the TargetDrawing to the game's target and repaints the screen (refreshes it).
+    // Modifies: targetDrawing
     private void gameLoop() {
         // draw target
         targetDrawing.setTarget(gameMode.getTarget());
         this.repaint();
     }
 
+    // Effects: Displays a small timer in the top left of the screen to show the time remaining.
     @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         graphics.drawString(Float.toString(Math.round((float)gameMode.getTime() / 10) / 100.0f), 20, 20);
     }
 
+    // Effects: Clears the screen and displays the player's stats and "retry" and "exit" buttons
+    // Modifies: this
     private void endGameScreen() {
         this.removeAll();
         setLayout(new GridBagLayout());
@@ -134,6 +155,8 @@ public class GameWindow extends JPanel {
         aimTrainer.setPanel(this);
     }
 
+    // Effects: Creates and returns a retry button that instantiates a new GameWindow to start the process again
+    // Modifies: aimTrainer
     private JButton makeRetryButton() {
         JButton retryButton = new JButton("Retry");
         retryButton.addActionListener(new ActionListener() {
@@ -145,6 +168,8 @@ public class GameWindow extends JPanel {
         return retryButton;
     }
 
+    // Effects: Creates and returns an exit button that swaps the panel to the menu.
+    // Modifies: aimTrainer
     private JButton makeExitButton() {
         JButton exitButton = new JButton("Exit");
         exitButton.addActionListener(new ActionListener() {
@@ -156,6 +181,7 @@ public class GameWindow extends JPanel {
         return exitButton;
     }
 
+    // Effects: Creates and returns a panel with the player's statistics
     private JPanel makeStatsPanel() {
         JPanel stats = new JPanel(new GridLayout(2, 2));
         stats.add(new Label("Precision:"));

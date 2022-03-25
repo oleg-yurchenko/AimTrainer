@@ -29,27 +29,23 @@ public class AimTrainer extends JFrame {
         PROFILE
     }
 
-    // Creates all top level variables (profiles, terminal, screen, gui) and displays the main menu window.
+    // Creates and initialized top level variables (such as the frame, profiles list, etc.)
+    // Shows the frame and adds the panel as the MenuWindow.
     public AimTrainer() throws IOException {
         super("AimTrainer");
         profiles = new ArrayList<>();
-        // Top level declaration for the user interface display
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(makeWindowListener());
         setSize(frameWidth, frameHeight);
-        // The menu window, which the user will be shown upon launching the game
         setPanel(new MenuWindow(this));
-
         add(panel);
-
-        // Open the GUI
         setVisible(true);
     }
 
     // Effects: tries to read the existing file and load the data into the profiles variable.
     //          If ReadProfileException or FileNotFoundException then creates a new file.
     //          If JSONException then rewrites the existing file (JSON was corrupt).
-    // Modifies: this, File file
+    // Modifies: this, file
     private void loadData() throws IOException {
         try {
             Reader reader = new Reader();
@@ -69,7 +65,7 @@ public class AimTrainer extends JFrame {
     }
 
     // Effects: Clears the file and stores the current profiles to the file (overwrites the file with new profile list)
-    // Modifies: File file
+    // Modifies: file
     private void saveData() throws IOException {
         Writer writer = new Writer();
         writer.clearFile();

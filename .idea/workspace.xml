@@ -6,13 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added a timer to GameWindow in top right to help keep track of time.">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/project_f7u9j_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/DefaultGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/DefaultGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/MovingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/MovingGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/ShrinkingGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileSelectWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/ProfileWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/TargetDrawing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648021561243</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game.">
+      <created>1648053485251</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1648053485251</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added the Day class which stores gained and burned calories for each day." />
     <MESSAGE value="Added the Profile class which stores the days with the calories and the name of the user. Modified README.md." />
     <MESSAGE value="implemented very primitive UI interface." />
     <MESSAGE value="Implemented all classes' stubs and tests for the classes so far." />
@@ -474,7 +486,8 @@
     <MESSAGE value="Swapped TimedGame to DefaultGame as it would make more sense if all the games were timed. Added ShrinkingGame and a test suite for ShrinkingGame." />
     <MESSAGE value="merge updated popups to the swing branch." />
     <MESSAGE value="Added a timer to GameWindow in top right to help keep track of time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a timer to GameWindow in top right to help keep track of time." />
+    <MESSAGE value="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

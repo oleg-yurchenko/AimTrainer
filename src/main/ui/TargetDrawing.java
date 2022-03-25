@@ -5,12 +5,15 @@ import model.Target;
 import javax.swing.*;
 import java.awt.*;
 
+// The drawing of a Target (circle)
 public class TargetDrawing extends JComponent {
     private Target target;
     private float originalX;
     private float originalY;
     private float originalRadius;
 
+    // Effects: Sets initial values and gets the given target.
+    // Modifies: this
     TargetDrawing(Target target) {
         this.target = target;
         this.originalX = -1.0f;
@@ -19,6 +22,7 @@ public class TargetDrawing extends JComponent {
         setPreferredSize(new Dimension(AimTrainer.getFrameWidth(), AimTrainer.getFrameHeight()));
     }
 
+    // Effects: Draws the target onto the screen.
     @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
@@ -29,6 +33,8 @@ public class TargetDrawing extends JComponent {
         graphics.fillOval(newX, newY, (int)(radius * 2), (int)(radius * 2));
     }
 
+    // Effects: Sets a new target and changes values related to the new target.
+    // Modifies: this
     public void setTarget(Target target) {
         this.target = target;
         this.originalX = target.getPosX() - target.getRadius();

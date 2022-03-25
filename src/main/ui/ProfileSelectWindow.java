@@ -12,9 +12,9 @@ public class ProfileSelectWindow extends JPanel {
     private AimTrainer aimTrainer;
     private JPanel nextWindow;
 
-    // Sets the initial variable values and shows the profile window and all its components.
+    // Effects: Sets the initial variable values and shows the profile window and all its components.
+    // Modifies: this
     public ProfileSelectWindow(AimTrainer aimTrainer, AimTrainer.Mode mode) {
-        // Title of the window
         super();
 
         this.mode = mode;
@@ -25,7 +25,7 @@ public class ProfileSelectWindow extends JPanel {
     }
 
 
-    // Adds all the profiles in this.profiles to the panel.
+    // Effects: Adds all the profiles in this.profiles to the panel along with the "add profile" and "back" buttons.
     private void generateScreen() {
         // Clears the screen of current components
         this.removeAll();
@@ -50,47 +50,55 @@ public class ProfileSelectWindow extends JPanel {
         aimTrainer.setPanel(this);
     }
 
-    // Creates a button of the given profile and attaches it to the panel.
+    // Effects: Creates a button of the given profile and attaches it to the panel.
+    // Modifies: this
     private void writeProfile(Profile profile) {
         JButton profileButton = new JButton(profile.getName());
-        profileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // checks which window to launch next
-                if (mode == AimTrainer.Mode.GAME) {
-                    Object[] gameOptions = {"Cancel", "Moving", "Shrinking", "Default"};
-                    int gameChoice = JOptionPane.showOptionDialog(null, "Choose your game mode", "", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null, gameOptions, gameOptions[3]);
-                    // seconds * 1000 to convert to milliseconds
-                    int time = 0;
-                    if (gameChoice != 0) {
-                        time = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter the time for your game (in seconds)")) * 1000;
-                    }
-                    Game gameMode;
-                    switch (gameChoice) {
-                        case 3: gameMode = new DefaultGame(profile, time);
-                                break;
-                        case 2: gameMode = new ShrinkingGame(profile, time);
-                                break;
-                        case 1: gameMode = new MovingGame(profile, time);
-                                break;
-                        default: gameMode = null;
-                    }
-                    if (gameMode != null) {
-                        nextWindow = new GameWindow(aimTrainer, profile, gameMode);
-                    } else {
-                        nextWindow = new ProfileSelectWindow(aimTrainer, mode);
-                    }
-                } else {
-                    nextWindow = new ProfileWindow(aimTrainer, profile);
-                }
-                // renders the given next window, whether it be to view the profile or play the game.
-                aimTrainer.setPanel(nextWindow);
+        profileButton.addActionListener(e -> {
+            // checks which window to launch next
+            if (mode == AimTrainer.Mode.GAME) {
+                nextWindow = getGameChoice(profile);
+            } else {
+                nextWindow = new ProfileWindow(aimTrainer, profile);
             }
+            // renders the given next window, whether it be to view the profile or play the game.
+            aimTrainer.setPanel(nextWindow);
         });
         this.add(profileButton);
     }
 
-    // Creates a button to add a profile and attaches it to the panel
+    // Effects: Returns the next panel depending on what game mode the player chooses (or if the cancel).
+    private JPanel getGameChoice(Profile profile) {
+        Object[] gameOptions = {"Cancel", "Moving", "Shrinking", "Default"};
+        String gameMessage = "Choose your game mode";
+        // the 2 below is actually JOptionPane.OK_CANCEL_OPTION
+        // the -1 below is actually JOptionPane.PLAIN_MESSAGE
+        int gameChoice = JOptionPane.showOptionDialog(null, gameMessage, "", 2, -1, null, gameOptions, gameOptions[3]);
+        // seconds * 1000 to convert to milliseconds
+        int time = 0;
+        if (gameChoice != 0) {
+            String timeMessage = "Enter the time for your game (in seconds)";
+            time = Integer.parseInt(JOptionPane.showInputDialog(null, timeMessage)) * 1000;
+        }
+        Game gameMode;
+        switch (gameChoice) {
+            case 3: gameMode = new DefaultGame(profile, time);
+                break;
+            case 2: gameMode = new ShrinkingGame(profile, time);
+                break;
+            case 1: gameMode = new MovingGame(profile, time);
+                break;
+            default: gameMode = null;
+        }
+        if (gameMode != null) {
+            return new GameWindow(aimTrainer, profile, gameMode);
+        } else {
+            return new ProfileSelectWindow(aimTrainer, mode);
+        }
+    }
+
+    // Effects: Creates a button to add a profile and attaches it to the panel
+    // Modifies: this
     private void writeAddProfile() {
         JButton addProfileButton = new JButton("Add Profile");
         addProfileButton.addActionListener(new ActionListener() {
