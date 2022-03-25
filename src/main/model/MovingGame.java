@@ -7,8 +7,8 @@ import java.util.Random;
 // A game mode with moving targets
 public class MovingGame extends Game {
     public static final float MOVE_SPEED = 0.5f;
-    private static float speedFactorX;
-    private static float speedFactorY;
+    private float speedFactorX;
+    private float speedFactorY;
     private float lastTargetTime;
     Random random;
 
@@ -64,11 +64,19 @@ public class MovingGame extends Game {
         return boundsLeft || boundsRight || boundsUp || boundsDown;
     }
 
-    public static float getSpeedFactorX() {
+    public float getSpeedFactorX() {
         return speedFactorX;
     }
 
-    public static float getSpeedFactorY() {
+    public float getSpeedFactorY() {
         return speedFactorY;
+    }
+
+    public void setSpeedFactorX(float speedFactorX) {
+        this.speedFactorX = speedFactorX;
+    }
+
+    public void setSpeedFactorY(float speedFactorY) {
+        this.speedFactorY = speedFactorY;
     }
 }

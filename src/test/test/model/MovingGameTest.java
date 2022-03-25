@@ -12,10 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class MovingGameTest extends GameTest {
+    MovingGame movingGame;
+
     @BeforeEach
     public void beforeEach() {
         game = new MovingGame(new Profile("test"), 10000);
         game.gameStart(); // generates target
+        movingGame = (MovingGame) game;
     }
 
     @Override
@@ -35,27 +38,27 @@ public class MovingGameTest extends GameTest {
 
         super.tickTest();
 
-        assertEquals(positionXHolder + MovingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED, game.getTarget().getPosX());
-        assertEquals(positionYHolder + MovingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED, game.getTarget().getPosY());
+        assertEquals(positionXHolder + movingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED, game.getTarget().getPosX());
+        assertEquals(positionYHolder + movingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED, game.getTarget().getPosY());
     }
 
-    @Test
-    public void tickTargetOffScreenTest() {
-        Target oldTarget = game.getTarget();
-        float nextXPos = game.getTarget().getPosX() + MovingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED;
-        float nextYPos = game.getTarget().getPosY() + MovingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED;
+
+    /*
         boolean outOfLeftBounds = nextXPos <= 2 * game.getTarget().getRadius();
         boolean outOfRightBounds = nextXPos >= AimTrainer.getFrameWidth() - 2 * game.getTarget().getRadius();
         boolean outOfBotBounds = nextYPos <= 2 * game.getTarget().getRadius();
         boolean outOfTopBounds = nextYPos >= AimTrainer.getFrameHeight() - 2 * game.getTarget().getRadius();
-        while (!(outOfLeftBounds || outOfRightBounds || outOfBotBounds || outOfTopBounds)) {
+         */
+
+    @Test
+    public void tickTargetOffScreenLeftTest() {
+        Target oldTarget = game.getTarget();
+        movingGame.setSpeedFactorX(-1.0f);
+        movingGame.setSpeedFactorY(0.0f);
+        float nextXPos = game.getTarget().getPosX() + movingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED;
+        while (!(nextXPos <= 2 * game.getTarget().getRadius())) {
             assertEquals(oldTarget, game.getTarget());
-            nextXPos = game.getTarget().getPosX() + MovingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED;
-            nextYPos = game.getTarget().getPosY() + MovingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED;
-            outOfLeftBounds = nextXPos <= 2 * game.getTarget().getRadius();
-            outOfRightBounds = nextXPos >= AimTrainer.getFrameWidth() - 2 * game.getTarget().getRadius();
-            outOfBotBounds = nextYPos <= 2 * game.getTarget().getRadius();
-            outOfTopBounds = nextYPos >= AimTrainer.getFrameHeight() - 2 * game.getTarget().getRadius();
+            nextXPos = game.getTarget().getPosX() + movingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED;
             game.tick();
         }
         game.tick();
@@ -63,13 +66,60 @@ public class MovingGameTest extends GameTest {
     }
 
     @Test
-    public void onClickMidMove() {
-        float oldSpeedFactorX = MovingGame.getSpeedFactorX();
-        float oldSpeedFactorY = MovingGame.getSpeedFactorY();
+    public void tickTargetOffScreenRightTest() {
+        Target oldTarget = game.getTarget();
+        movingGame.setSpeedFactorX(1.0f);
+        movingGame.setSpeedFactorY(0.0f);
+        float nextXPos = game.getTarget().getPosX() + movingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED;
+        while (!(nextXPos >= AimTrainer.getFrameWidth() - 2 * game.getTarget().getRadius())) {
+            assertEquals(oldTarget, game.getTarget());
+            nextXPos = game.getTarget().getPosX() + movingGame.getSpeedFactorX() * MovingGame.MOVE_SPEED;
+            game.tick();
+        }
+        game.tick();
+        assertNotEquals(oldTarget, game.getTarget());
+    }
+
+    @Test
+    public void tickTargetOffScreenUpTest() {
+        Target oldTarget = game.getTarget();
+        movingGame.setSpeedFactorX(0.0f);
+        movingGame.setSpeedFactorY(-1.0f);
+        float nextYPos = game.getTarget().getPosY() + movingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED;
+        while (!(nextYPos <= 2 * game.getTarget().getRadius())) {
+            assertEquals(oldTarget, game.getTarget());
+            nextYPos = game.getTarget().getPosY() + movingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED;
+            game.tick();
+        }
+        game.tick();
+        assertNotEquals(oldTarget, game.getTarget());
+    }
+
+    @Test
+    public void tickTargetOffScreenDownTest() {
+        Target oldTarget = game.getTarget();
+        movingGame.setSpeedFactorX(0.0f);
+        movingGame.setSpeedFactorY(1.0f);
+        float nextYPos = game.getTarget().getPosY() + movingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED;
+        while (!(nextYPos >= AimTrainer.getFrameHeight() - 2 * game.getTarget().getRadius())) {
+            assertEquals(oldTarget, game.getTarget());
+            nextYPos = game.getTarget().getPosY() + movingGame.getSpeedFactorY() * MovingGame.MOVE_SPEED;
+            game.tick();
+        }
+        game.tick();
+        assertNotEquals(oldTarget, game.getTarget());
+    }
+
+
+
+    @Test
+    public void onClickMidMoveTest() {
+        float oldSpeedFactorX = movingGame.getSpeedFactorX();
+        float oldSpeedFactorY = movingGame.getSpeedFactorY();
         game.tick();
         game.tick();
         game.onClick(-1, -1); // -1, -1 represents a test value for a miss
-        assertNotEquals(oldSpeedFactorX, MovingGame.getSpeedFactorX());
-        assertNotEquals(oldSpeedFactorY, MovingGame.getSpeedFactorY());
+        assertNotEquals(oldSpeedFactorX, movingGame.getSpeedFactorX());
+        assertNotEquals(oldSpeedFactorY, movingGame.getSpeedFactorY());
     }
 }

@@ -45,7 +45,7 @@ public class ShrinkingGameTest extends GameTest {
     }
 
     @Test
-    public void onClickMidShrink() {
+    public void onClickMidShrinkTest() {
         float desiredRadius = game.getTarget().getRadius();
         game.tick();
         game.tick();
