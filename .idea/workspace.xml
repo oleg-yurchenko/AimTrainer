@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="added EventLog and Event. Updated README.md">
-      <change afterPath="$PROJECT_DIR$/src/main/model/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/model/EventLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/testing.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/testing.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648194350280</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added EventLog and Event. Updated README.md">
+      <created>1648704401398</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1648704401398</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +450,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="swingui" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
