@@ -6,8 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="added EventLog and Event. Updated README.md">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Phase 4: Task 2">
+      <change afterPath="$PROJECT_DIR$/UML_Design_Diagram.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/AimTrainer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/AimTrainer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/AimTrainer$Mode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/AimTrainer$Mode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/AimTrainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/AimTrainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project_f7u9j/ui/MenuWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/MenuWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +95,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in project_f7u9j">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.Main" />
       <module name="project_f7u9j" />
@@ -223,8 +234,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in project_f7u9j" />
         <item itemvalue="JUnit.test.model in project_f7u9j" />
         <item itemvalue="JUnit.test in project_f7u9j" />
         <item itemvalue="JUnit.ReaderTest" />
@@ -436,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648704401398</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Phase 4: Task 2">
+      <created>1648704988288</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1648704988288</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,7 +483,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented all classes' stubs and tests for the classes so far." />
     <MESSAGE value="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile." />
     <MESSAGE value="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be." />
     <MESSAGE value="Implemented all methods in Target" />
@@ -490,7 +507,8 @@
     <MESSAGE value="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game." />
     <MESSAGE value="Updated tests for more code coverage in the direction of the bounds of the MovingGame." />
     <MESSAGE value="added EventLog and Event. Updated README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="added EventLog and Event. Updated README.md" />
+    <MESSAGE value="Phase 4: Task 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Phase 4: Task 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

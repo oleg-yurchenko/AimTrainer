@@ -11,14 +11,12 @@ import java.util.ArrayList;
 // This class represents the window where the user can choose to play a game, view a profile or quit.
 public class MenuWindow extends JPanel {
     private ProfileSelectWindow profileSelectWindow;
-    private ArrayList<Profile> profiles;
     private AimTrainer aimTrainer;
 
     // Effects: Sets the initial variable values and shows the menu window and all its components.
     // Modifies: this
     public MenuWindow(AimTrainer aimTrainer) {
         super(new GridLayout(3, 1));
-        this.profiles = aimTrainer.getProfiles();
         this.aimTrainer = aimTrainer;
 
         generateScreen();
