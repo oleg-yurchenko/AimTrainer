@@ -13,3 +13,10 @@ As a user:
 - I want to be able to reset a profile
 - I want to be able to save my profiles (including stats)
 - I want to be able to load all of my saved profiles
+
+## EventLog
+Unfortunately, due to decisions made early into the design process, the adding and removing of profiles is done entirely inside the GUI.
+In order to reduce coupling and the need for more Classes, I deemed the adding and removing of profiles to be too insignificant of a task to require an entire class in and of itself.
+Because of this, throughout my code I make calls to the top-level ArrayList of profiles in the AimTrainer class to remove or add profiles to it in the methods of various buttons.
+Since none of the actions in UI are logged, the logger does not actually output anything, however the adding and removing process is there.
+If I were to refactor my code, I think I will make a main class in the model that stores any of the "meta" variables such as the profiles, the selected game mode, and more, since I would be able to pass it, and it alone into all my UI classes instead of different variables (AimTrainer some times, Profile other times, etc.).

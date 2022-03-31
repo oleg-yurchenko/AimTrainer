@@ -6,11 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game.">
+    <list default="true" id="caa3e199-3289-430b-994b-1ab2a14f4625" name="Changes" comment="added EventLog and Event. Updated README.md">
+      <change afterPath="$PROJECT_DIR$/src/main/model/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/model/EventLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/MovingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/MovingGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/model/MovingGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/MovingGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test/model/ShrinkingGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profiles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/testing.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/testing.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ui/AimTrainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -425,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648053485251</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Updated tests for more code coverage in the direction of the bounds of the MovingGame.">
+      <created>1648194350280</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1648194350280</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,8 +464,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added the Profile class which stores the days with the calories and the name of the user. Modified README.md." />
-    <MESSAGE value="implemented very primitive UI interface." />
     <MESSAGE value="Implemented all classes' stubs and tests for the classes so far." />
     <MESSAGE value="Finished the Profile class. Added visuals with the ability to choose a profile, view its statistics, add a new profile." />
     <MESSAGE value="Finished the user interface, very primitive. To select a target in the &quot;game&quot; one must move the selector with arrow keys (if you can't see the selector just hit tab, not sure why this happens, most likely due to lanterna behaviour). Hit enter to choose a target. Target is represented as an X, and its position is randomized every time the user hits the target. The stats are shown in real-time, and are also available in the Profile window. So far there is no use in implementing the Target class, however in the full version I believe there will be." />
@@ -479,7 +487,9 @@
     <MESSAGE value="merge updated popups to the swing branch." />
     <MESSAGE value="Added a timer to GameWindow in top right to help keep track of time." />
     <MESSAGE value="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a mini-stats panel to the end of GameWindow below retry and exit buttons on end of game." />
+    <MESSAGE value="Updated tests for more code coverage in the direction of the bounds of the MovingGame." />
+    <MESSAGE value="added EventLog and Event. Updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="added EventLog and Event. Updated README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

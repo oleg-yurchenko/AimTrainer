@@ -1,6 +1,8 @@
 package ui;
 
 import exceptions.ReadProfileException;
+import model.Event;
+import model.EventLog;
 import model.Profile;
 import org.json.JSONException;
 import persistence.*;
@@ -98,6 +100,10 @@ public class AimTrainer extends JFrame {
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(this, "Unable to save data");
             }
+        }
+        // print event log
+        for (Event event : EventLog.getInstance()) {
+            System.out.println(event.toString());
         }
         System.exit(0);
     }
